@@ -1207,28 +1207,23 @@
 // Вызов checkPassword('"jqueryismyjam") возвращает "Welcome!"
 
 // // --------------------===================== Result --------------------=====================
-function checkPassword(password) {
-    const ADMIN_PASSWORD = "jqueryismyjam";
-    let message;
-    // Change code below this line
+// function checkPassword(password) {
+// const ADMIN_PASSWORD = "jqueryismyjam";
+// let message;
+// switch (password) {
+// case ADMIN_PASSWORD:
+// message = "Welcome!";
+// break;
 
-    switch (password) {
+// case null:
+// message = "Canceled by user!";
+// break;
 
-        case ADMIN_PASSWORD:
-            message = "Welcome!";
-            break;
-
-        case null:
-            message = "Canceled by user!";
-            break;
-
-        default:
-            message = "Access denied, wrong password!";
-    }
-
-    // Change code above this line
-    return message;
-}
+// default:
+// message = "Access denied, wrong password!";
+// }
+// return message;
+// }
 
 
 
