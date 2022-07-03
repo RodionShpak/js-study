@@ -318,6 +318,21 @@
 
 // // --------------------===================== Result --------------------=====================
 
+// BEFORE
+
+// function splitMessage(message, delimeter) {
+//     let words;
+//     return words;
+// }
+
+// AFTER
+
+// function splitMessage(message, delimeter) {
+//     return message.split(delimeter);
+// }
+
+
+
 
 
 
