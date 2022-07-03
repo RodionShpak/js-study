@@ -1207,24 +1207,192 @@
 // Вызов checkPassword('"jqueryismyjam") возвращает "Welcome!"
 
 // // --------------------===================== Result --------------------=====================
+//     // if (password === null) {
+//     //   message = "Canceled by user!";
+//     // } else if (password === ADMIN_PASSWORD) {
+//     //   message = "Welcome!";
+//     // } else {
+//     //   message = "Access denied, wrong password!";
+//     // }
+
 // function checkPassword(password) {
-// const ADMIN_PASSWORD = "jqueryismyjam";
-// let message;
-// switch (password) {
-// case ADMIN_PASSWORD:
-// message = "Welcome!";
-// break;
+//     const ADMIN_PASSWORD = "jqueryismyjam";
+//     let message;
+//     switch (password) {
+//         case ADMIN_PASSWORD:
+//             message = "Welcome!";
+//             break;
 
-// case null:
-// message = "Canceled by user!";
-// break;
+//         case null:
+//             message = "Canceled by user!";
+//             break;
 
-// default:
-// message = "Access denied, wrong password!";
+//         default:
+//             message = "Access denied, wrong password!";
+//     }
+//     return message;
 // }
-// return message;
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-29
+// ЗАДАЧА: ДОСТАВКА ТОВАРА
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция getShippingCost(country) должна проверять возможность доставки товара в страну пользователя(параметр country)
+// и возвращать сообщение о результате хранящееся в переменной message.Обязательно используй инструкцию switch.
+// Формат возвращаемой строки "Shipping to <country> will cost <price> credits", где вместо < country > и < price >
+// необходимо подставить соотвествующие значения.
+// Список стран и стоимость доставки:
+
+// China - 100 кредитов
+// Chile - 250 кредитов
+// Australia - 170 кредитов
+// Jamaica - 120 кредитов
+// Из списка видно, что доставка есть не везде.Если указанной страны нет в списке, то функция должна вернуть строку
+// "Sorry, there is no delivery to your country"
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция getShippingCost(country)
+// В теле функции использована инструкция switch
+// Вызов getShippingCost("Australia") возвращает "Shipping to Australia will cost 170 credits"
+// Вызов getShippingCost("Germany") возвращает "Sorry, there is no delivery to your country"
+// Вызов getShippingCost("China") возвращает "Shipping to China will cost 100 credits"
+// Вызов getShippingCost("Chile") возвращает "Shipping to Chile will cost 250 credits"
+// Вызов getShippingCost("Jamaica") возвращает "Shipping to Jamaica will cost 120 credits"
+// Вызов getShippingCost("Sweden") возвращает "Sorry, there is no delivery to your country"
+
+// // --------------------===================== Result --------------------=====================
+// function getShippingCost(country) {
+//     let message;
+//     switch (country) {
+//         case "China":
+//             message = "Shipping to China will cost 100 credits";
+//             break;
+
+//         case "Chile":
+//             message = "Shipping to Chile will cost 250 credits";
+//             break;
+
+//         case "Australia":
+//             message = "Shipping to Australia will cost 170 credits";
+//             break;
+
+//         case "Jamaica":
+//             message = "Shipping to Jamaica will cost 120 credits";
+//             break;
+
+//         default:
+//             message = "Sorry, there is no delivery to your country";
+//     }
+//     return message;
 // }
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-30
+// ДЛИНА СТРОКИ
+// Для того чтобы узнать длину строки, то есть количество её символов, у строк есть встроенное свойство length,
+// значение которого можно получить обратившить к нему через точку после имени переменной или строкового литерала.
+
+// const productName = "Repair droid";
+
+// // Если в переменной хранится строка
+// console.log(productName.length); // 12
+
+// // Если строковый литерал
+// console.log("Repair droid".length); // 12
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция getNameLength(name) принимает имя(параметр name) и возвращает строку, в которой указана его длина.
+// Дополни шаблонную строку в переменной message длиной строки из параметра name.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция getNameLength(name)
+// Вызов функции getNameLength("Poly") возвращает "Name Poly is 4 characters long"
+// Вызов функции getNameLength("Harambe") возвращает "Name Harambe is 6 characters long"
+// Вызов функции getNameLength("Billy") возвращает "Name Billy is 5 characters long"
+// Вызов функции getNameLength("Joe") возвращает "Name Joe is 3 characters long"
+
+// // --------------------===================== Result --------------------=====================
+// function getNameLength(name) {
+//     const message = `Name ${name} is ${name.length} characters long`;
+//     return message;
+// }
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-31
+// ИНДЕКСАЦИЯ ЭЛЕМЕНТОВ СТРОКИ
+// Строка — это индексированный набор из нуля или более символов, заключенных в одинарные, двойные или косые кавычки.
+// Индексация элементов строки начинается с нуля.
+// Например, в строке 'JavaScript' буква 'J' стоит на позиции с индексом 0, а 't' идёт под индексом 9.
+// При этом длина строки 'JavaScript' равна 10, то есть индекс последнего элемента всегда на единицу меньше чем её длина.
+// Для доступа к значению элемента строки используется синтаксис квадратных скобок строка[индекс].
+
+// const productName = "Repair droid";
+// console.log(productName[0]); // "R"
+// console.log(productName[5]); // "r"
+// console.log(productName[11]); // "d"
+// console.log(productName[productName.length - 1]); // "d"
+// Содержимое строки нельзя изменить, только прочитать.То есть нельзя взять какой - то символ и заменить его,
+// как только строка создана — она такая навсегда.Можно лишь создать целиком новую строку и присвоить в переменную вместо старой.
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Дополни код присвоив объявленным переменным выражения обращения к соответствующим элементам или свойствам строки в переменной course.
+// courseTopicLength - длина строки.
+// firstElement - первый символ строки.
+// lastElement - последний символ строки.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена переменная courseTopic
+// Значение переменной courseTopic это строка "JavaScript essentials"
+// Объявлена переменная courseTopicLength
+// Значение переменной courseTopicLength это число 21
+// Объявлена переменная firstElement
+// Значение переменной firstElement это строка "J"
+// Объявлена переменная lastElement
+// Значение переменной lastElement это строка "s"
+
+// // --------------------===================== Result --------------------=====================
+// const courseTopic = "JavaScript essentials";
+// const courseTopicLength = courseTopic.length;
+// const firstElement = courseTopic[0];
+// const lastElement = courseTopic[courseTopic.length - 1];
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-32
+// МЕТОД SLICE()
+// Метод строк slice(startIndex, endIndex) используется для создания копии части или всей строки.
+// Он делает копию элементов строки от startIndex и до, но не включая endIndex и возвращает новую строку.
+// const productName = "Repair droid";
+// console.log(productName.slice(0, 4)); // "Repa"
+// console.log(productName.slice(3, 9)); // "air dr"
+// console.log(productName.slice(0, productName.length)); // "Repair droid"
+// console.log(productName.slice(7, productName.length)); // "droid"
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция getSubstring(string, length) принимает строку и возвращает подстроку от начала и до length символов.
+// Она объявляет два параметра, значения которых будут задаваться во время её вызова:
+
+// string - оригинальная строка
+// length - количество символов с начала строки для подстроки
+// Присвой переменной substring выражение создания подстроки длинной length символов(от начала) из строки string.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция getSubstring(string, length)
+// Вызов функции getSubstring("Hello world", 3) возвращает "Hel"
+// Вызов функции getSubstring("Hello world", 6) возвращает "Hello"
+// Вызов функции getSubstring("Hello world", 8) возвращает "Hello wo"
+// Вызов функции getSubstring("Hello world", 11) возвращает "Hello world"
+// Вызов функции getSubstring("Hello world", 0) возвращает ""
+
+// // --------------------===================== Result --------------------=====================
+// function getSubstring(string, length) {
+//     const substring = string.slice(0, length);
+//     return substring;
+// }
 
 
 
