@@ -1394,6 +1394,119 @@
 //     return substring;
 // }
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-33
+// ЗАДАЧА: ФОРМАТИРОВАНИЕ СООБЩЕНИЯ
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция formatMessage(message, maxLength) принимает строку(параметр message) и форматирует её,
+// если длина превышает значение в параметре maxLength.
+// Дополни код функции так, что если длина строки:
+// не превышает maxLength, функция возвращает её в исходном виде.
+// больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...",
+// после чего возвращает укороченную версию.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция formatMessage(message, maxLength)
+// Вызов функции formatMessage("Curabitur ligula sapien", 16) возвращает "Curabitur ligula..."
+// Вызов функции formatMessage("Curabitur ligula sapien", 23) возвращает "Curabitur ligula sapien"
+// Вызов функции formatMessage("Vestibulum facilisis purus nec", 20) возвращает "Vestibulum facilisis..."
+// Вызов функции formatMessage("Vestibulum facilisis purus nec", 30) возвращает "Vestibulum facilisis purus nec"
+// Вызов функции formatMessage("Nunc sed turpis a felis in nunc fringilla", 15) возвращает "Nunc sed turpis..."
+// Вызов функции formatMessage("Nunc sed turpis a felis in nunc fringilla", 41) возвращает "Nunc sed turpis a felis in nunc fringilla"
+
+// // --------------------===================== Result --------------------=====================
+// function formatMessage(message, maxLength) {
+//     let result;
+//     if (message.length <= maxLength);
+//     {
+//         result = message;
+//     }
+// else {
+//         result = message.slice(0, maxLength) + "...";
+//     }
+//     return result;
+// }
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-34
+// МЕТОДЫ TOLOWERCASE() И TOUPPERCASE()
+// Бывают ситуации когда все символы в строке необходимо преобразовать в один регистр, верхний или нижний.
+// Например, при поиске по ключевому слову, когда пользователь вводит строку 'saMsUng', а сравнить её надо со строкой 'samsung' или 'SAMSUNG'.
+// console.log("saMsUng" === "samsung"); // false
+// console.log("saMsUng" === "SAMSUNG"); // false
+// Чтобы не требовать абсолютно точный ввод можно сделать «нормализацию» введённой пользователем строки,
+// то есть преобразовать все её символы в верхний или нижний регистр.Методы строки toLowerCase() и toUpperCase()
+// вернут новую строку в соответствующем регистре, не изменяя оригинальную.
+
+// const BRAND_NAME = "SAMSUNG";
+// const userInput = "saMsUng";
+// const normalizedToUpperCaseInput = userInput.toUpperCase();
+
+// console.log(userInput); // 'saMsUng'
+// console.log(userInput === BRAND_NAME); // false
+// console.log(normalizedToUpperCaseInput); // 'SAMSUNG'
+// console.log(normalizedToUpperCaseInput === BRAND_NAME); // true
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция normalizeInput(input) принимает строку(параметр input) и возвращает такую же строку, но в нижнем регистре.
+// Присвой переменной normalizedInput выражение создания строки в нижнем регистре из параметра input.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция normalizeInput(input)
+// Вызов функции normalizeInput("Hello world") возвращает "hello world"
+// Вызов функции normalizeInput("This ISN'T SpaM") возвращает "this isn't spam"
+// Вызов функции normalizeInput("Big SALE") возвращает "big sale"
+
+// // --------------------===================== Result --------------------=====================
+// function normalizeInput(input) {
+//     const normalizedInput = input.toLowerCase();
+//     return normalizedInput;
+// }
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-35
+// МЕТОД INCLUDES()
+// Метод строк includes(substring) проверяет входит ли подстрока substring в строку, возвращает буль - true если входит и false в противном случае.
+// Регистр символов в строке и подстроке имеет значение, так как например буква "a" не равна букве "А".
+
+// const productName = "Repair droid";
+
+// console.log(productName.includes("a")); // true
+// console.log(productName.includes("A")); // false
+// console.log(productName.includes("droid")); // true
+// console.log(productName.includes("Droid")); // false
+// console.log(productName.includes("Repair")); // true
+// console.log(productName.includes("repair")); // false
+
+// //  --------------------===================== Сonditions --------------------=====================
+// Функция checkName(fullname, name) принимает два параметра и возвращает буль true или false -
+// результат проверки вхождения подстроки name в строку fullname.
+
+// fullname - полное имя состоящее из двух слов(имени и фамилии) разделённых пробелом.
+// name - имя для проверки вхождения в полное имя.
+// Присвой переменной result выражение проверки вхождения имени(параметр name), в полное имя(параметр fullname).
+// Пусть функция строго относится к регистру букв, то есть «Петя» и «петя» для неё разные имена.
+
+// //  --------------------===================== Test --------------------=====================
+// Объявлена функция checkForName(fullname, name).
+// Вызов функции checkForName("Egor Kolbasov", "Egor") возвращает true
+// Вызов функции checkForName("Egor Kolbasov", "egor") возвращает false
+// Вызов функции checkForName("Egor Kolbasov", "egOr") возвращает false
+// Вызов функции checkForName("Egor Kolbasov", "Zhenya") возвращает false
+// Вызов функции checkForName("Vadim Nekrasov", "Vadim") возвращает true
+// Вызов функции checkForName("Vadim Nekrasov", "vadim") возвращает false
+// Вызов функции checkForName("Vadim Nekrasov", "Dima") возвращает false
+
+// // --------------------===================== Result --------------------=====================
+// function checkForName(fullName, name) {
+//     const result = fullName.includes(name);
+//     return result;
+// }
+
 
 
 
