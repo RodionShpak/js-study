@@ -432,5 +432,18 @@
 
 // // --------------------===================== Result --------------------=====================
 
-
+// function getSuccessRate(statistic) {
+//     if (statistic.length === 0) {
+//         return 0;
+//     }
+//     let count = 0;
+//     for (let i = 0; i < statistic.length; i++) {
+//         if (statistic[i] === '1') {
+//             count++;
+//         }
+//         console.log(count);
+//     }
+//     let final = (100 / statistic.length) * count;
+//     return Math.round(final);
+// }
 
