@@ -2447,42 +2447,588 @@
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-33
+// ЗАДАЧА.МАСИВ ЗБІГІВ
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// Функція findMatches() приймає довільну кількість аргументів.
+// Першим аргументом завжди буде масив чисел, а решта аргументів будуть просто числами.
+
+// Доповни код функції таким чином, щоб вона повертала новий масив matches,
+// в якому будуть тільки ті аргументи, починаючи з другого, які є в масиві першого аргументу.
+
+// Наприклад, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) повинна повернути масив[1, 2],
+// тому що тільки вони є в масиві першого аргументу.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція findMatches()
+// Виклик findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) повертає[1, 2]
+// Виклик findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) повертає[17, 89, 2]
+// Виклик findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) повертає[24, 9, 41]
+// Виклик findMatches([63, 11, 8, 29], 4, 7, 16) повертає[]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function findMatches() {
+//     const matches = []; // Don't change this line
+//     // Change code above this line
+//     return matches;
+// }
+
+// // After
+
+// function findMatches(array, ...args) {
+//     const matches = [];
+//     console.log(array);
+//     console.log(args);
+//     for (const elenemt of array) {
+//         for (const arg of args) {
+//             if (elenemt === arg) {
+//                 matches.push(arg);
+//             }
+//         }
+//     }
+//     return matches;
+// }
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-34
+
+// МЕТОДИ ОБ'ЄКТА
+// Досі ми розглядали об'єкти тільки як сховища взаємопов'язаних даних, наприклад, інформація про книгу тощо.
+// Об'єкти-сховища, зазвичай, знаходяться в масиві таких самих об'єктів, який є колекцією однотипних елементів.
+
+// Об'єкти можуть зберігати не тільки дані, але і функції для роботи з цими даними - методи.
+// Якщо значення властивості - це функція, така властивість називається методом об'єкта.
+
+// // ✅ Логічно і синтаксично згруповані сутності
+// const bookShelf = {
+//     books: ["Останнє королівство", "Страж снів"],
+//     // Це метод об'єкта
+//     getBooks() {
+//         console.log("Цей метод буде повертати всі книги - властивість books");
+//     },
+//     // Це метод об'єкта
+//     addBook(bookName) {
+//         console.log("Цей метод буде додавати нову книгу у властивість books");
+//     },
+// };
+
+// // Виклики методів
+// bookShelf.getBooks();
+// bookShelf.addBook("Нова книга");
+// Такі об'єкти можна назвати «моделями». Вони пов'язують дані і методи для роботи з цими даними.
+// Наприклад, можна було оголосити змінну books і дві функції getBooks() і addBook(bookName),
+// але тоді це були б три незалежні сутності без явного синтаксичного, і зі слабким логічним зв'язком.
+
+// // ❌ Слабкопозв'язані, незалежні сутності
+// const books = [];
+// function getBooks() { }
+// function addBook() { }
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// Додай об'єкту bookShelf ще два методи, які поки що будуть повертати просто рядки за аналогією з getBooks() і addBook(bookName).
+
+// Метод removeBook(bookName) буде видаляти книгу за назвою.
+// Повертає рядок "Deleting book <назва книги>", де < назва книги > - це значення параметра bookName.
+
+// Метод updateBook(oldName, newName) буде оновлювати назву книги на нову.
+// Повертає рядок "Updating book <стара назва> to <нова назва>", де < стара назва > і < нова назва > -
+// це значення параметрів oldName і newName відповідно.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна bookShelf
+// Значення змінної bookShelf - це об'єкт
+// Значення властивості bookShelf.getBooks - це метод об'єкта
+// Виклик методу bookShelf.getBooks() повертає рядок "Returning all books"
+// Значення властивості bookShelf.addBook - це метод об'єкта
+// Виклик методу bookShelf.addBook("Haze") повертає рядок "Adding book Haze"
+// Значення властивості bookShelf.removeBook - це метод об'єкта
+// Виклик методу bookShelf.removeBook("Red sunset") повертає рядок "Deleting book Red sunset"
+// Значення властивості bookShelf.updateBook - це метод об'єкта
+// Виклик методу bookShelf.updateBook("Sands of dune", "Dune") повертає рядок "Updating book Sands of dune to Dune"
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const bookShelf = {
+//     // Change code below this line
+//     books: ["The last kingdom", "The guardian of dreams"],
+//     getBooks() {
+//         return "Returning all books";
+//     },
+//     addBook(bookName) {
+//         return `Adding book ${bookName}`;
+//     },
+//     // Change code above this line
+// };
+
+// // After
+
+// const bookShelf = {
+//     books: ['The last kingdom', 'The guardian of dreams'],
+//     getBooks() {
+//         return 'Returning all books';
+//     },
+//     addBook(bookName) {
+//         return `Adding book ${bookName}`;
+//     },
+//     removeBook(bookName) {
+//         return `Deleting book ${bookName}`;
+//     },
+//     updateBook(oldName, newName) {
+//         return `Updating book ${oldName} to ${newName}`;
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-35
+
+// ДОСТУП ДО ВЛАСТИВОСТЕЙ ОБ'ЄКТА В ЙОГО МЕТОДАХ
+// Методи використовуються для роботи з властивостями об'єкта, їх зміни.
+// Для доступу до об'єкта в методі використовується не ім'я змінної, наприклад bookShelf, а ключове слово this - контекст.
+// Значенням this буде об'єкт перед «крапкою», тобто об'єкт, який викликав цей метод, у нашому випадку - це посилання на об'єкт bookShelf.
+
+// const bookShelf = {
+//     books: ["Останнє королівство"],
+//     getBooks() {
+//         console.log(this);
+//     },
+// };
+
+// // Перед крапкою знаходиться об'єкт bookShelf,
+// // тому, викликаючи метод, this буде зберігати посилання на нього.
+// bookShelf.getBooks(); // {books: ["Останнє королівство"], getBooks: f}
+// Для того щоб отримати доступ до властивостей об'єкта в методах,
+// ми звертаємось до нього через this і далі, стандартно - «через крапку» до властивостей.
+
+// const bookShelf = {
+//     books: ["Останнє королівство"],
+//     getBooks() {
+//         return this.books;
+//     },
+//     addBook(bookName) {
+//         this.books.push(bookName);
+//     },
+//     removeBook(bookName) {
+//         const bookIndex = this.books.indexOf(bookName);
+//         this.books.splice(bookIndex, 1);
+//     },
+// };
+
+// console.log(bookShelf.getBooks()); // []
+// bookShelf.addBook("Імла");
+// bookShelf.addBook("Страж снів");
+// console.log(bookShelf.getBooks()); // ["Останнє королівство", "Імла", "Страж снів"]
+// bookShelf.removeBook("Імла");
+// console.log(bookShelf.getBooks()); // ["Останнє королівство", "Страж снів"]
+// Логічно замислитися - чому б не використовувати ім'я об'єкта у зверненні до властивостей, адже ми явно не збираємося його змінювати.
+// Справа в тому, що ім'я об'єкта - річ ненадійна, методи одного об'єкта можна копіювати в інший (з іншим ім'ям),
+// а в майбутньому дізнаємось, що часто під час створення об'єкта, ми наперед зовсім не знаємо імені.
+// Використання this гарантує, що метод працює саме з тим об'єктом, який його викликав.
+
+// //  --------------------===================== Сonditions =====================-------------------
+
+// Доповни метод updateBook(oldName, newName) таким чином, щоб він змінював назву книги з oldName на newName у властивості books.
+// Використовуй indexOf() для того, щоб знайти потрібний елемент масиву, і splice() для того, щоб замінити цей елемент.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна bookShelf
+// Значення змінної bookShelf - це об'єкт
+// Значення властивості bookShelf.updateBook - це метод об'єкта
+// Після виклику методу bookShelf.updateBook("Haze", "Dungeon chronicles"),
+// значення властивості books - це масив["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+// Після виклику методу bookShelf.updateBook("The last kingdom", "Dune"),
+// значення властивості books - це масив["Dune", "Haze", "The guardian of dreams"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const bookShelf = {
+//     books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//     updateBook(oldName, newName) {
+//         // Change code below this line
+//     },
+// };
+
+// // After
+
+// const bookShelf = {
+//     books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+//     updateBook(oldName, newName) {
+//         console.log(this.books);
+//         const idx = this.books.indexOf(oldName);
+//         console.log(idx);
+//         this.books.splice(idx, 1, newName);
+//         console.log(this.books);
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-36
+// ЗАДАЧА.КРАМНИЦЯ ЗІЛЛЯ «У СТАРОЇ ЖАБИ»
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// До нас звернулася власниця крамниці зілля «У старої жаби» і замовила програму для ведення інвентарю -
+// додавання, видалення, пошуку та оновлення зілля.
+// Додай об'єкту atTheOldToad властивість potions, значенням якої зроби порожній масив.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.potions - це масив[]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const atTheOldToad = {
+//     // Change code above this line
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: [],
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-37
+// ЗАДАЧА.ОТРИМУЄМО ВСЕ ЗІЛЛЯ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Додай об'єкту atTheOldToad метод getPotions(), який просто повертає значення властивості potions.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.potions - це масив["Speed potion", "Dragon breath", "Stone skin"]
+// Значення властивості atTheOldToad.getPotions - це метод об'єкта
+// Виклик методу atTheOldToad.getPotions() повертає["Speed potion", "Dragon breath", "Stone skin"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     // Change code below this line
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     getPotions() {
+//         return this.potions;
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-38
+// ЗАДАЧА: ДОДАЄМО НОВЕ ЗІЛЛЯ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни метод addPotion(potionName) таким чином, щоб він додавав зілля potionName в кінець масиву зілля у властивості potions.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.potions - це масив["Speed potion", "Dragon breath", "Stone skin"]
+// Значення властивості atTheOldToad.addPotion - це метод об'єкта
+// Після першого виклику методу atTheOldToad.addPotion("Invisibility"),
+//     у властивості potions буде масив["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+// Після другого виклику методу atTheOldToad.addPotion("Power potion"),
+//     у властивості potions буде масив["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     addPotion(potionName) {
+//         // Change code above this line
+//     },
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     addPotion(potionName) {
+//         this.potions.push(potionName);
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-39
+// ЗАДАЧА: ВИДАЛЯЄМО ЗІЛЛЯ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни метод removePotion(potionName) таким чином, щоб він видаляв зілля potionName з масиву зілля у властивості potions.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.potions - це масив["Speed potion", "Dragon breath", "Stone skin"]
+// Значення властивості atTheOldToad.removePotion - це метод об'єкта
+// Після першого виклику методу atTheOldToad.removePotion("Dragon breath"), у властивості potions буде масив["Speed potion", Stone skin"]
+// Після другого виклику методу atTheOldToad.removePotion("Speed potion"), у властивості potions буде масив["Stone skin"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     removePotion(potionName) {
+//         // Change code below this line
+//     },
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     removePotion(potionName) {
+//         const idx = this.potions.indexOf(potionName);
+//         this.potions.splice(idx, 1);
+//         console.log(this.potions);
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-40
+// ЗАДАЧА: ОНОВЛЮЄМО ЗІЛЛЯ
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// Доповни метод updatePotionName(oldName, newName) таким чином,
+// щоб він оновлював назву зілля з oldName на newName в масиві зілля у властивості potions.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.potions - це масив["Speed potion", "Dragon breath", "Stone skin"]
+// Значення властивості atTheOldToad.updatePotionName - це метод об'єкта
+// Після першого виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"),
+// у властивості potions буде масив["Speed potion", "Polymorth", "Stone skin"]
+// Після другого виклику методу atTheOldToad.updatePotionName("Stone skin", "Invisibility"),
+// у властивості potions буде масив["Speed potion", "Polymorth", "Invisibility"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const atTheOldToad = {
+//     potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//     updatePotionName(oldName, newName) {
+//         // Change code above this line
+//     },
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: ['Speed potion', 'Dragon breath', 'Stone skin'],
+//     updatePotionName(oldName, newName) {
+//         const idx = this.potions.indexOf(oldName);
+//         this.potions.splice(idx, 1, newName);
+//         console.log(this.potions);
+//     },
+// };
 
 
 
+// ###########################################################################################################################################################
 
+// // ==========================================Task-41
+// ЗАДАЧА: РОЗШИРЮЄМО ІНВЕНТАР
 
+// //  --------------------===================== Сonditions =====================--------------------
 
+// Замовниця хоче, щоб кожне зілля було представлено не тільки ім'ям, але й ціною, а в майбутньому, можливо, й іншими характеристиками.
+// Тому зараз у властивості potions буде зберігатися масив об'єктів з наступними властивостями.
 
+// {
+//     name: "Dragon breath",
+//         price: 700
+// }
 
+// Виконай рефакторинг методів об'єкта atTheOldToad таким чином, щоб вони працювали не з масивом рядків, а з масивом об'єктів.
 
+//     getPotions() - метод для отримання всього зілля.Повертає значення властивості potions.
+//     addPotion(newPotion) - додає зілля newPotion(вже об'єкт) в масив у властивості potions, але тільки,
+//         якщо такого зілля ще немає в інвентарі.В іншому випадку повертається рядок.
+// removePotion(potionName) - видаляє об'єкт зілля з ім'ям potionName з масиву у властивості potions.
+//             updatePotionName(oldName, newName) - оновлює властивість name об'єкта-зілля з назвою oldName на newName в масиві potions.
 
+// //  --------------------===================== Tests =====================--------------------
 
+// Оголошена змінна atTheOldToad
+// Значення змінної atTheOldToad - це об'єкт
+// Значення властивості atTheOldToad.getPotions - це метод об'єкта
+// Виклик методу atTheOldToad.getPotions() для вихідного об'єкта повертає [ { name: "Speed potion", price: 460 },
+// { name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 } ]
+// Значення властивості atTheOldToad.addPotion - це метод об'єкта.
+// Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Invisibility", price: 620 }),
+// в масиві potions останнім елементом буде цей об'єкт
+// Для вихідного об'єкта після виклику методу atTheOldToad.addPotion({ name: "Power potion", price: 270 }),
+// в масиві potions останнім елементом буде цей об'єкт
+// Якщо зілля, що додається, вже є в масиві potions, метод addPotion повертає рядок з текстом з вихідного коду
+// Якщо зілля, що додається, вже є в масиві potions, метод addPotion не додає в нього переданий об'єкт
+// Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }), масив potions не змінюється
+// Для вихідного об'єкта після виклику atTheOldToad.addPotion({ name: "Stone skin", price: 240 }), массив potions не змінюється
+// Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }),
+// повертає рядок "Error! Potion Dragon breath is already in your inventory!"
+// Для вихідного об'єкта виклик atTheOldToad.addPotion({ name: "Stone skin", price: 240 }),
+// повертає рядок "Error! Potion Stone skin is already in your inventory!"
+// Значення властивості atTheOldToad.removePotion - це метод об'єкта
+// Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Dragon breath"),
+// у властивості potions буде масив[{ name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 }]
+// Для вихідного об'єкта після виклику методу atTheOldToad.removePotion("Speed potion"),
+// у властивості potions буде масив[{ name: "Dragon breath", price: 780 }, { name: "Stone skin", price: 520 }]
+// Значення властивості atTheOldToad.updatePotionName - це метод об'єкта
+// Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Dragon breath", "Polymorth"),
+// у властивості potions буде масив[{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 }]
+// Для вихідного об'єкта після виклику методу atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"),
+// у властивості potions буде масив[{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 }]
 
+// //  --------------------===================== Result =====================--------------------
 
+// // Before
 
+// const atTheOldToad = {
+//     potions: [
+//         { name: "Speed potion", price: 460 },
+//         { name: "Dragon breath", price: 780 },
+//         { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         if (this.potions.includes(newPotion)) {
+//             return `Error! Potion ${newPotion} is already in your inventory!`;
+//         }
 
+//         this.potions.push(newPotion);
+//     },
+//     removePotion(potionName) {
+//         const potionIndex = this.potions.indexOf(potionName);
+
+//         if (potionIndex === -1) {
+//             return `Potion ${potionName} is not in inventory!`;
+//         }
+
+//         this.potions.splice(potionIndex, 1);
+//     },
+//     updatePotionName(oldName, newName) {
+//         const potionIndex = this.potions.indexOf(oldName);
+
+//         if (potionIndex === -1) {
+//             return `Potion ${oldName} is not in inventory!`;
+//         }
+
+//         this.potions.splice(potionIndex, 1, newName);
+//     },
+//     // Change code above this line
+// };
+
+// // After
+
+// const atTheOldToad = {
+//     potions: [
+//         { name: 'Speed potion', price: 460 },
+//         { name: 'Dragon breath', price: 780 },
+//         { name: 'Stone skin', price: 520 },
+//     ],
+//     getPotions() {
+//         return this.potions;
+//     },
+//     addPotion(newPotion) {
+//         const valuesNewPotion = Object.values(newPotion);
+//         // console.log(valuesNewPotion);
+//         for (const obj of this.potions) {
+//             // console.log(Object.values(obj));
+//             for (const value of Object.values(obj)) {
+//                 // console.log(value);
+//                 for (const valueNewPotion of valuesNewPotion) {
+//                     // console.log(valueNewPotion);
+//                     if (valueNewPotion === value) {
+//                         return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//                     }
+//                 }
+//             }
+//         }
+//         this.potions.push(newPotion);
+//     },
+//     removePotion(potionName) {
+//         for (const potion of this.potions) {
+//             // console.log(potion);
+//             const potionValues = Object.values(potion);
+//             // console.log(potionValues);
+//             for (const value of potionValues) {
+//                 // console.log(value);
+//                 if (value === potionName) {
+//                     // console.log('ok', value, potionName);
+//                     const idx = this.potions.indexOf(potion);
+//                     // console.log(idx);
+//                     return this.potions.splice(idx, 1);
+//                 }
+//             }
+//         }
+//         return `Potion ${potionName} is not in inventory!`;
+//     },
+//     updatePotionName(oldName, newName) {
+//         const { potions } = this;
+//         for (let i = 0; i < potions.length; i += 1) {
+//             if (potions[i].name === oldName) {
+//                 potions[i].name = newName;
+//             }
+//         }
+//     },
+// };
 
 
 
@@ -2493,7 +3039,7 @@
 
 // ###########################################################################################################################################################
 
-// // ==========================================Task-1
+// // ==========================================Task-41
 
 // //  --------------------===================== Сonditions =====================--------------------
 
@@ -2505,17 +3051,6 @@
 
 
 // // After
-
-
-
-
-
-
-
-
-
-
-
 
 
 
