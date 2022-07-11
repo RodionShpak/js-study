@@ -1,3 +1,452 @@
+// ###########################################################################################################################################################
+
+// // ==========================================Task-1
+
+// СТВОРЕННЯ ОБ'ЄКТА
+
+// Об'єкти дозволяють описати і згрупувати характеристики об'єктів реального світу - користувача, книги, продукту магазину, чого завгодно.
+// Об'єкти ще називають словниками, тобто вони містять терміни (властивості) та їх визначення (значення).
+
+// const book = {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["historical prose", "adventure"],
+//     public: true,
+//     rating: 8.38,
+// };
+// Для оголошення використовуються фігурні дужки { } - літерал об'єкта.
+// При створенні об'єкта можна додати властивості, кожна з яких описується парами ключ: значення.
+// Ключ ще називають ім'ям властивості і це завжди рядок.
+// Значенням властивості можуть бути будь - які типи: примітиви, масиви, об'єкти, булі, функції тощо.Властивості розділяються комою.
+
+// //  --------------------===================== Сondition =====================--------------------
+
+// Присвой змінній apartment об'єкт, який описує квартиру з наступними характеристиками:
+
+// imgUrl - фотографія, значення "https://via.placeholder.com/640x480";
+// descr - опис, значення "Spacious apartment in the city center";
+// rating - рейтинг, значення 4;
+// price - ціна, значення 2153;
+// tags - метаінформація, масив["premium", "promoted", "top"].
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна apartment
+// Значення змінної apartment - це об'єкт
+// Об'єкт містить властивість imgUrl
+// Значення властивості imgUrl - це рядок "https://via.placeholder.com/640x480"
+// Об'єкт містить властивість descr
+// Значення властивості descr - це рядок "Spacious apartment in the city center"
+// Об'єкт містить властивість rating
+// Значення властивості rating - це число 4
+// Об'єкт містить властивість price
+// Значення властивості price - це число 2153
+// Об'єкт містить властивість tags
+// Значення властивості tags - це масив["premium", "promoted", "top"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-2
+
+// ВКЛАДЕНІ ВЛАСТИВОСТІ
+
+// Значенням властивості може бути інший об'єкт. Це використовується для зберігання вкладених і згрупованих даних.
+
+// Наприклад, статистика користувача соціальної мережі складається з кількості послідовників,
+// переглядів і лайків, і зберігати ці дані найзручніше у вигляді об'єкта. Те саме з місцем розташування, окремо країна і місто.
+
+// В майбутньому це можна буде використовувати для пошуку користувачів за країною, містом,
+// мінімальною або максимальною кількістю послідовників тощо.
+
+// const user = {
+//     name: "Jacques Gluke",
+//     tag: "jgluke",
+//     location: {
+//         country: "Jamaica",
+//         city: "Ocho Rios",
+//     },
+//     stats: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
+
+// //  --------------------===================== Сondition =====================--------------------
+
+// Доповни об'єкт квартири властивістю owner, значенням якого буде об'єкт з інформацією про власника.Додай йому наступні властивості:
+
+// name - ім'я власника, значення "Henry";
+// phone - телефон, значення "982-126-1588";
+// email - пошта, значення "henry.carter@aptmail.com".
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна apartment
+// Значення змінної apartment - це об'єкт
+// В об'єкта змінної apartment присутні властивості imgUrl, descr, rating, price і tag зі значеннями
+// В об'єкті apartment присутня властивість owner
+// Значення властивості owner - це об'єкт
+// В об'єкті owner присутня властивість name
+// Значення властивості name - це "Henry"
+// В об'єкті owner присутня властивість phone
+// Значення властивості phone - це "982-126-1588"
+// В об'єкті owner присутня властивість email
+// Значення властивості email - це "henry.carter@aptmail.com"
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+// // After
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+//     owner: {
+//         name: "Henry",
+//         phone: "982-126-1588",
+//         email: "henry.carter@aptmail.com",
+//     },
+// };
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-3
+
+// ДОСТУП ДО ВЛАСТИВОСТЕЙ ЧЕРЕЗ КРАПКУ
+// Перший спосіб отримати доступ до властивості об'єкта - це синтаксис об'єкт.ключ_властивості.
+// Здебільшого використовується синтаксис «через крапку» і підходить тоді,
+// коли ми заздалегідь знаємо ім'я (ключ) властивості, до якої хочемо отримати доступ.
+
+// На місце звернення буде повернуте значення властивості з таким ім'ям.
+// Якщо в об'єкті відсутня властивість з таким ім'ям, на місце звернення повернеться undefined.
+// const book = {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["historical prose", "adventure"],
+//     public: true,
+//     rating: 8.38,
+// };
+
+// const bookTitle = book.title;
+// console.log(bookTitle); // "The Last Kingdom"
+
+// const bookGenres = book.genres;
+// console.log(bookGenres); // ["historical prose", "adventure"]
+
+// const bookPrice = book.price;
+// console.log(bookPrice); // undefined
+
+// //  --------------------===================== Сondition =====================--------------------
+
+// Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment.
+
+// aptRating - рейтинг;
+// aptDescr - опис;
+// aptPrice - ціна;
+// aptTags - теги.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна apartment
+// Значення змінної apartment - це об'єкт
+// В об'єкта змінної apartment присутні властивості imgUrl, descr, rating, price і tag зі значеннями
+// Оголошена змінна aptRating
+// Значення змінної aptRating - це число 4
+// Оголошена змінна aptDescr
+// Значення змінної aptDescr - це рядок "Spacious apartment in the city center"
+// Оголошена змінна aptPrice
+// Значення змінної aptPrice - це число 2153
+// Оголошена змінна aptTags
+// Значення змінної aptTags - це масив рядків["premium", "promoted", "top"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+// const aptRating = apartment.rating;
+// const aptDescr = apartment.descr;
+// const aptPrice = apartment.price;
+// const aptTags = apartment.tags;
+
+// // After
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+// const aptRating = apartment.rating;
+// const aptDescr = apartment.descr;
+// const aptPrice = apartment.price;
+// const aptTags = apartment.tags;
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-4
+
+// ДОСТУП ДО ВКЛАДЕНИХ ВЛАСТИВОСТЕЙ
+// const user = {
+//     name: "Jacques Gluke",
+//     tag: "jgluke",
+//     location: {
+//         country: "Jamaica",
+//         city: "Ocho Rios",
+//     },
+//     hobbies: ["swiming", "music", "sci-fi"],
+// };
+// Для доступу до вкладених властивостей використовується ланцюжок звернень «через крапку».
+// Наприклад, якщо необхідно отримати значення країни користувача, записуємо user.location.country,
+// де user.location - це звернення(шлях) до об'єкта у властивості location,
+// а user.locaton.country - звернення до властивості country в цьому об'єкті.Тобто, «крапка» вказує наступну вкладеність.
+
+// const location = user.location;
+// console.log(location); // Об'єкт location
+
+// const country = user.location.country;
+// console.log(country); // "Jamaica"
+// Якщо значення властивості - це масив, то у нашому прикладі user.hobbies - звернення до цього масиву.
+// Далі можна отримати доступ до його елементів через квадратні дужки та індекс або використовувати властивості і методи.
+
+// const hobbies = user.hobbies;
+// console.log(hobbies); // ["swiming", "music", "sci-fi"]
+
+// const firstHobby = user.hobbies[0];
+// console.log(firstHobby); // "swiming"
+
+// const numberOfHobbies = user.hobbies.length;
+// console.log(numberOfHobbies); // 3
+
+// //  --------------------===================== Сondition =====================--------------------
+
+// Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment.
+
+// ownerName - ім'я власника;
+// ownerPhone - телефон власника;
+// ownerEmail - пошта власника;
+// numberOfTags - кількість елементів масиву у властивості tags;
+// firstTag - перший елемент масиву у властивості tags;
+// lastTag - останній елемент масиву у властивості tags.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна apartment за допомогою const
+//     Значення змінної apartment - це об'єкт
+// Оголошена змінна ownerName за допомогою const
+//     Значення змінної ownerName - це рядок "Henry"
+// Оголошена змінна ownerPhone за допомогою const
+//     Значення змінної ownerPhone - це "982-126-1588"
+// Оголошена змінна ownerEmail за допомогою const
+//     Значення змінної ownerEmail - це "henry.carter@aptmail.com"
+// Оголошена змінна numberOfTags за допомогою const
+//     Значення змінної numberOfTags - це 3
+// Оголошена змінна firstTag за допомогою const
+//     Значення змінної firstTag - це "premium"
+// Оголошена змінна lastTag за допомогою const
+//     Значення змінної lastTag - це "top"
+
+// //  --------------------===================== Result =====================--------------------
+
+
+// // Before
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+//     owner: {
+//         name: "Henry",
+//         phone: "982-126-1588",
+//         email: "henry.carter@aptmail.com",
+//     },
+// };
+
+// const ownerName = apartment;
+// const ownerPhone = apartment;
+// const ownerEmail = apartment;
+// const numberOfTags = apartment;
+// const firstTag = apartment;
+// const lastTag = apartment;
+
+// // After
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+//     owner: {
+//         name: "Henry",
+//         phone: "982-126-1588",
+//         email: "henry.carter@aptmail.com",
+//     },
+// };
+
+// const ownerName = apartment.owner.name;
+// const ownerPhone = apartment.owner.phone;
+// const ownerEmail = apartment.owner.email;
+// const numberOfTags = apartment.tags.length;
+// const firstTag = apartment.tags[0];
+// const lastTag = apartment.tags[2];
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-5
+
+// ДОСТУП ДО ВЛАСТИВОСТЕЙ ЧЕРЕЗ КВАДРАТНІ ДУЖКИ
+// Другий спосіб отримати доступ до властивості об'єкта - це синтаксис об'єкт["ключ_властивості"].
+// Схоже на звернення до елемента масиву з відмінністю в тому, що в дужках зазначається не індекс елемента, а ім'я властивості як рядок.
+
+// Синтаксис «квадратних дужок» використовується значно рідше.
+// Як правило у випадках, коли ім'я властивості заздалегідь невідоме або воно зберігається у змінній (як значення параметра функції, наприклад).
+
+// На місце звернення буде повернуто значення властивості з таким ім'ям.
+// Якщо в об'єкті відсутня властивість з таким ім'ям, на місце звернення повернеться undefined.
+// const book = {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["historical prose", "adventure"],
+//     public: true,
+//     rating: 8.38,
+// };
+
+// const bookTitle = book["title"];
+// console.log(bookTitle); // "The Last Kingdom"
+
+// const bookGenres = book["genres"];
+// console.log(bookGenres); // ["historical prose", "adventure"]
+
+// const propKey = "author";
+// const bookAuthor = book[propKey];
+// console.log(bookAuthor); // "Bernard Cornwell"
+
+// //  --------------------===================== Сondition =====================--------------------
+
+// Доповни код, присвоївши оголошеним змінним вирази звернення до відповідних властивостей об'єкта apartment,
+// використовуючи синтаксис «квадратних дужок».
+
+// aptRating - рейтинг;
+// aptDescr - опис;
+// aptPrice - ціна;
+// aptTags - теги.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна apartment
+// Значення змінної apartment - це об'єкт
+// Оголошена змінна aptRating
+// Значення змінної aptRating - це 4
+// Оголошена змінна aptDescr
+// Значення змінної aptDescr - це "Spacious apartment in the city center"
+// Оголошена змінна aptPrice
+// Значення змінної aptPrice - це 2153
+// Оголошена змінна aptTags
+// Значення змінної aptTags - це["premium", "promoted", "top"]
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+// const aptRating = apartment;
+// const aptDescr = apartment;
+// const aptPrice = apartment;
+// const aptTags = apartment;
+
+// // After
+
+// const apartment = {
+//     imgUrl: "https://via.placeholder.com/640x480",
+//     descr: "Spacious apartment in the city center",
+//     rating: 4,
+//     price: 2153,
+//     tags: ["premium", "promoted", "top"],
+// };
+
+// const aptRating = apartment["rating"];
+// const aptDescr = apartment["descr"];
+// const aptPrice = apartment["price"];
+// const aptTags = apartment["tags"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-1
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// //  --------------------===================== Test =====================--------------------
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // After
+
+
 
 
 
