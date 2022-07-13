@@ -635,466 +635,703 @@
 
 // // ==========================================Task-19
 
+// ІТЕРАЦІЯ ПО МАСИВУ
+// Цикл for можна використовувати для ітерації по масиву, тобто «перебрати» його поелементно.
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (let i = 0; i < planets.length; i += 1) {
+//     console.log(planets[i]);
+// }
+// Для доступу до елементів використовується синтаксис квадратних дужок масив[індекс],
+// де індекс - це значення лічильника циклу від 0 і до останнього індексу масиву, який на одиницю менший за довжину масиву.
+
 // //  --------------------===================== Сonditions =====================--------------------
+// Доповни код циклу for таким чином, щоб він послідовно логував усі елементи масиву fruits.
 
 // //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна fruits
+// Значення змінної fruits - це масив["apple", "plum", "pear", "orange"]
+// Оголошена змінна i - лічильник циклу
+// Початкове значення змінної i дорівнює 0
+// Умова циклу приводиться до true доти, доки i менше за 4
+// На кожній ітерації значення змінної i збільшується на одиницю
+// В тілі циклу for оголошується змінна const fruit і цій змінній присвоюється значення - елемент масиву
+// В тілі циклу for використовується виведення у консоль змінної fruit
 
 // //  --------------------===================== Result =====================--------------------
 
 // // Before
 
-
-// // After
-
-
-
-
-
-
-
-
-
-
-// ###########################################################################################################################################################
-
-// // ==========================================Task-41
-
-// //  --------------------===================== Сonditions =====================--------------------
-
-// //  --------------------===================== Tests =====================--------------------
-
-// //  --------------------===================== Result =====================--------------------
-
-// // Before
-
-
-// // After
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ###########################################################################################################################################################
-// //  --------------------===================== TASKS --------------------=====================
-
-// ------------------------------Задача 1------------------------------------
-// function checkAge(age) {
-//   if (age >= 18) {
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+// for (let i = ;) {
 //     // Change this line
-//     return 'You are an adult';
-//   }
-
-//   return 'You are a minor';
-// }
-// console.log(checkAge(15));
-
-// ------------------------------Задача 2------------------------------------
-// function checkPassword(password) {
-//   const ADMIN_PASSWORD = 'jqueryismyjam';
-//   // Change code below this line
-
-//   if (password === ADMIN_PASSWORD) {
-//     return 'Welcome!';
-//   }
-//   return 'Access denied, wrong password!';
+//     const fruit = fruits[];
+//     // Change this line
+//     console.log(fruit);
 // }
 
-// console.log(checkPassword('jqueryismyjam'));
+// // After
 
-// ------------------------------Задача 3------------------------------------
-// function checkStorage(available, ordered) {
-
-//   if (ordered === 0) {
-//     return 'Your order is empty!';
-//   }
-//   if (ordered > available) {
-//     return 'Your order is too large, not enough goods in stock!';
-//   }
-//   return 'The order is accepted, our manager will contact you';
-// }
-
-// console.log(checkStorage(2000, 100));
-
-// ------------------------------Задача 4------------------------------------
 // const fruits = ['apple', 'plum', 'pear', 'orange'];
-
-// ------------------------------Задача 5------------------------------------
-// const fruits = ['apple', 'plum', 'pear', 'orange'];
-
-// const firstElement = fruits[0];
-// const secondElement = fruits[1];
-// const lastElement = fruits[fruits.length - 1];
-
-// console.log(lastElement); //orange
-
-// ------------------------------Задача 6------------------------------------
-// const fruits = ['apple', 'plum', 'pear', 'orange'];
-
-// fruits[1] = 'peach';
-// fruits[3] = 'banana';
-
-// console.log(fruits); // ['apple', 'peach', 'pear', 'banana']
-
-// ------------------------------Задача 7------------------------------------
-// const fruits = ['apple', 'peach', 'pear', 'banana'];
-
-// const fruitsArrayLength = fruits.length;
-// console.log(fruitsArrayLength); // 4
-
-// ------------------------------Задача 8------------------------------------
-// const fruits = ['apple', 'peach', 'pear', 'banana'];
-
-// const lastElementIndex = fruits.length - 1;
-// const lastElement = fruits[lastElementIndex];
-
-// console.log(lastElementIndex); //3
-// console.log(lastElement); //banana
-
-// ------------------------------Задача 9------------------------------------
-// function getExtremeElements(array) {
-//   const arrayLength = array.length;
-
-//   const arrayPartDel = arrayLength - 2;
-
-//   array.splice(1, arrayPartDel);
-//   return array;
-// }
-// console.log(getExtremeElements([1, 2, 3, 4, 5]));
-// console.log(getExtremeElements(['Earth', 'Mars', 'Venus']));
-// console.log(getExtremeElements(['apple', 'peach', 'pear', 'banana']));
-
-// ------------------------------Задача 10------------------------------------
-// function splitMessage(message, delimeter) {
-//   let words;
-
-//   words = message.split(delimeter);
-
-//   return words;
-// }
-
-// console.log(splitMessage('Mango hurries to the train', ' ')); // ["Mango", "hurries", "to", "the", "train"]
-// console.log(splitMessage('Mango', '')); // ["M", "a", "n", "g", "o"]
-// console.log(splitMessage('best_for_week', '_')); // ["best", "for", "week"]
-
-// ------------------------------Задача 11------------------------------------
-// function calculateEngravingPrice(message, pricePerWord) {
-//   return message.split(' ').length * pricePerWord;
-// }
-// console.log(calculateEngravingPrice('JavaScript is in my blood', 10)); // 50
-// console.log(calculateEngravingPrice('JavaScript is in my blood', 20)); // 100
-// console.log(calculateEngravingPrice('Web-development is creative work', 40)); // 160
-// console.log(calculateEngravingPrice('Web-development is creative work', 20)); // 80
-
-// ------------------------------Задача 12------------------------------------
-// function makeStringFromArray(array, delimeter) {
-//   let string;
-
-//   string = array.join(delimeter);
-
-//   return string;
-// }
-// console.log(makeStringFromArray(['Mango', 'hurries', 'to', 'the', 'train'], ' ')); // "Mango hurries to the train"
-// console.log(makeStringFromArray(['M', 'a', 'n', 'g', 'o'], '')); // "Mango"
-// console.log(makeStringFromArray(['top', 'picks', 'for', 'you'], '_')); // "top_picks_for_you"
-
-// ------------------------------Задача 13------------------------------------
-// function slugify(title) {
-//   return title.toLowerCase().split(' ').join('-');
-// }
-
-// console.log(slugify('Arrays for begginers'));
-// ------------------------------Задача 14------------------------------------
-// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
-
-// const firstTwoEls = fruits.slice(0, 2);
-// const nonExtremeEls = fruits.slice(1, [fruits.length - 1]);
-// const lastThreeEls = fruits.slice(-3);
-
-// console.log(nonExtremeEls); // ['plum', 'pear', 'orange']
-
-// ------------------------------Задача 15------------------------------------
-// function makeArray(firstArray, secondArray, maxLength) {
-
-//   const allArray = firstArray.concat(secondArray);
-
-//   if (allArray.length > maxLength) {
-//     return allArray.slice(0, maxLength);
-//   }
-//   return allArray;
-// }
-// console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); // ['Mango', 'Poly', 'Ajax']
-// console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4)); // ['Mango', 'Poly', 'Houston', 'Ajax']
-// console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3)); // ['Mango', 'Ajax', 'Chelsea']
-// console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0)); // []
-
-// ------------------------------Задача 16------------------------------------
-// const start = 3;
-// const end = 7;
-
-// for (let i = start; i <= end; i += 1) {
-//   console.log(i);
-// }
-
-// ------------------------------Задача 17------------------------------------
-// function calculateTotal(number) {
-//   let total = 0;
-//   for (let i = 1; i <= number; i += 1) {
-//     total += i;
-//   }
-//   return total;
-// }
-
-// console.log(calculateTotal(1)); //1
-// console.log(calculateTotal(3)); // 6
-// console.log(calculateTotal(7)); // 28
-
-// ------------------------------Задача 18------------------------------------
-// const fruits = ['apple', 'plum', 'pear', 'orange'];
-
 // for (let i = 0; i < fruits.length; i += 1) {
-//   const fruit = fruits[i];
-//   console.log(fruit);
+//     const fruit = fruits[i];
+//     console.log(fruit);
 // }
 
-// ------------------------------Задача 19------------------------------------
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-20
+// ЗАДАЧА: ОБЧИСЛЕННЯ СУМИ ПОКУПКИ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Напиши функцію calculateTotalPrice(order), яка приймає один параметр order - масив чисел, і обчислює загальну суму його елементів.
+// Загальна сума елементів повинна зберігатися у змінній total, яка повертається як результат роботи функції.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція calculateTotalPrice(order)
+// Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+// Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+// Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+// Виклик функції calculateTotalPrice() з випадковим масивом повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function calculateTotalPrice(order) {
-//   let total = 0;
-
-//   for (let i = 0; i < order.length; i += 1) {
-//     total += order[i];
-//   }
-
-//   return total;
+//     let total = 0;
+//     // Change code below this line
+//     return total;
 // }
 
-// console.log(calculateTotalPrice([12, 85, 37, 4])); // 138
-// console.log(calculateTotalPrice([164, 48, 291])); // 503
+// // After
 
-// ------------------------------Задача 20------------------------------------
 // function calculateTotalPrice(order) {
-//   let total = 0;
-//   // Change code below this line
-//   for (let i = 0; i < order.length; i += 1) {
-//     total += order[i];
-//   }
-//   // Change code above this line
-//   return total;
+//     let total = 0;
+//     for (let i = 0; i < order.length; i += 1) {
+//         total += order[i];
+//     }
+//     return total;
 // }
-// ------------------------------Задача 21------------------------------------
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-21
+// ЗАДАЧА: ПОШУК НАЙДОВШОГО СЛОВА
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Напиши функцію findLongestWordstring), яка приймає довільний рядок,
+// що складається тільки зі слів, розділених пробілом(параметр string),
+// і повертає найдовше слово в цьому рядку.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція findLongestWord(string)
+// Виклик функції findLongestWord("The quick brown fox jumped over the lazy dog") повертає jumped
+// Виклик функції findLongestWord("Google do a roll") повертає Google
+// Виклик функції findLongestWord("May the force be with you") повертає force
+// Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function findLongestWord(string) {
-//
-//   const arr = string.split(' ');
-//   // console.log(arr); // ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']
-//   let wordMaxLength = arr[0];
-//   // console.log(wordMaxLength);
-//   for (const word of arr) {
-//     // console.log(word);
-//     if (word.length > wordMaxLength.length) {
-//       wordMaxLength = word;
-//       // console.log(word);
-//     }
-//     wordMaxLength = wordMaxLength;
-//   }
-//   return wordMaxLength;
-//   // Change code above this line
+//     // Change code above this line
 // }
 
-// console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // jumped
-// console.log(findLongestWord('Google do a roll')); // Google
-// console.log(findLongestWord('May the force be with you')); // force
+// // After
 
-// ------------------------------Задача 22------------------------------------
+// function findLongestWord(string) {
+//     let word = '';
+//     for (let i = 0; i < string.split(' ').length; i += 1) {
+//         if (word.length < string.split(' ')[i].length) {
+//             word = string.split(' ')[i];
+//         }
+//     }
+//     return word;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-22
+// МЕТОД PUSH()
+// Метод push() дозволяє додати один або кілька елементів в кінець масиву, без необхідності вказувати індекси елементів, що додаються.
+
+// const planets = ["Earth", "Mars", "Venus"];
+// planets.push("Jupiter");
+// planets.push("Saturn", "Uranus", "Neptune");
+
+// console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни код функції createArrayOfNumbers(min, max) таким чином,
+// щоб вона повертала масив усіх цілих чисел від значення min до max.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція createArrayOfNumbers(min, max)
+// Виклик функції createArrayOfNumbers(1, 3) повертає[1, 2, 3]
+// Виклик функції createArrayOfNumbers(14, 17) повертає[14, 15, 16, 17]
+// Виклик функції createArrayOfNumbers(29, 34) повертає[29, 30, 31, 32, 33, 34]
+// Виклик функції createArrayOfNumbers() з випадковими min і max повертає правильний масив
+// В циклі for використовувався метод push
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function createArrayOfNumbers(min, max) {
-//   const numbers = [];
-//   // Change code below this line
-//   // numbers.push(min);
-//   // console.log(numbers);
-//   for (let i = min; i <= max; i += 1) {
-//     numbers.push(i);
-//     // console.log(numbers);
-//   }
-//   // Change code above this line
-//   return numbers;
+//     const numbers = [];
+//     // Change code below this line
+//     return numbers;
 // }
-// console.log(createArrayOfNumbers(1, 3)); // [1, 2, 3]
-// console.log(createArrayOfNumbers(14, 17)); // [14, 15, 16, 17]
-// console.log(createArrayOfNumbers(29, 34)); // [29, 30, 31, 32, 33, 34]
 
-// ------------------------------Задача 23------------------------------------
-// function filterArray(numbers, value) {
+// // After
 
-//   const newArray = [];
-
-//   for (const number of numbers) {
-//     if (number > value) {
-//       newArray.push(number);
+// function createArrayOfNumbers(min, max) {
+//     const numbers = [];
+//     for (let i = min; i <= max; i += 1) {
+//         numbers.push(i);
 //     }
-//   }
-//   return newArray;
+//     return numbers;
+//     return numbers;
 // }
-// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
 
-// ------------------------------Задача 24------------------------------------
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-23
+// ЗАДАЧА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Напиши функцію filterArray(numbers, value), яка приймає масив чисел(параметр numbers) і повертає новий масив,
+// в якому будуть тільки ті елементи масиву numbers, які більші за значення параметра value(число).
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція filterArray(numbers, value)
+// Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає[4, 5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає[5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає[]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає[41, 76]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає[24, 41, 76]
+// Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+// В циклі for використовувався метод push
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function filterArray(numbers, value) {
+//     // Change code above this line
+// }
+
+// // After
+
+// function filterArray(numbers, value) {
+//     let mass = [];
+//     for (let i = 0; i < numbers.length; i += 1) {
+//         if (numbers[i] > value) {
+//             mass.push(numbers[i]);
+//         }
+//         continue;
+//     }
+//     return mass;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-24
+// МЕТОД INCLUDES()
+// Метод includes(value) перевіряє, чи присутній в масиві елемент зі значенням value, і повертає true або false відповідно.
+// Сфера застосування цього методу зводиться до ситуацій, коли необхідно перевірити,
+// чи присутній елемент в масиві, і не важлива його позиція(індекс).
+
+// const planets = ["Earth", "Mars", "Venus"];
+
+// console.log(planets.includes("Earth")); // true
+// console.log(planets.includes("Mars")); // true
+// console.log(planets.includes("Venus")); // true
+// console.log(planets.includes("Jupiter")); // false
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Функція checkFruit(fruit) приймає рядок з назвою фрукта(параметр fruit),
+// і перевіряє, чи присутній такий фрукт в масиві fruits.
+
+// Доповни код функції таким чином, що якщо:
+
+// фрукт присутній в масиві, то функція повертає true;
+// фрукт відсутній в масиві, то функція повертає false.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція checkFruit(fruit)
+// Виклик checkFruit("plum") повертає true
+// Виклик checkFruit("mandarin") повертає false
+// Виклик checkFruit("pear") повертає true
+// Виклик checkFruit("Pear") повертає false
+// Виклик checkFruit("apple") повертає true
+// Виклик функції checkFruit() з випадковим словом повертає правильне значення boolean
+// У функції використовувався метод includes
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function checkFruit(fruit) {
-//   const fruits = ['apple', 'plum', 'pear', 'orange'];
-//   return fruits.includes(fruit);
+//     const fruits = ["apple", "plum", "pear", "orange"];
+//     // Change this line
+//     return;
 // }
 
-// ------------------------------Задача 25------------------------------------
+// // After
+
+// function checkFruit(fruit) {
+//     const fruits = ["apple", "plum", "pear", "orange"];
+//     return fruits.includes(fruit);
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-25
+// ЗАДАЧА: СПІЛЬНІ ЕЛЕМЕНТИ
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Спільними елементами масивів називають ті елементи, які присутні у всіх масивах.
+
+// Наприклад, у двох масивах[1, 3, 5] і[0, 8, 5, 3] спільними будуть числа 3 і 5,
+// оскільки вони присутні в обох вихідних масивах.
+// А числа 0, 1 і 8 присутні тільки в одному з масивів.
+
+// Напиши функцію getCommonElements(array1, array2), яка отримує два масиви довільної довжини в параметри array1 і array2,
+//     і повертає новий масив, що складається з тих елементів, які присутні в обох вихідних масивах.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція getCommonElements(array1, array2)
+// Виклик getCommonElements([1, 2, 3], [2, 4]) повертає[2]
+// Виклик getCommonElements([1, 2, 3], [2, 1, 17, 19]) повертає[1, 2]
+// Виклик getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) повертає[12, 27, 3]
+// Виклик getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) повертає[10, 30, 40]
+// Виклик getCommonElements([1, 2, 3], [10, 20, 30]) повертає[]
+// Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+// В циклі for використовувалися методи includes і push
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function getCommonElements(array1, array2) {
-//   // Change code below this line
-//   const array3 = [];
-
-//   for (const arr of array1) {
-//     console.log(arr);
-
-//     if (array1.includes(arr) && array2.includes(arr)) {
-//       array3.push(arr);
-//     }
-//   }
-//   return array3;
-//   // Change code above this line
+//     // Change code below this line
 // }
-// console.log(getCommonElements([1, 2, 3], [2, 4])); // [2]
-// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // [12, 27, 3]
-// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // []
 
-// ------------------------------Задача 26------------------------------------
+// // After
+
+// function getCommonElements(array1, array2) {
+//     let newAr = [];
+//     for (const number of array1) {
+//         if (array2.includes(number)) {
+//             newAr.push(number);
+//         }
+//     }
+//     return newAr;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-26
+// ЦИКЛ FOR...OF
+// Інструкція for...of оголошує цикл, який перебирає ітерабельні об'єкти, такі як масиви та рядки.
+// Тіло циклу буде виконуватися для значення кожного елемента.
+// Це хороша заміна циклу for, якщо не потрібен доступ до лічильника ітерації.
+
+// for (const variable of iterable) {
+//     // тіло цикла
+// }
+// variable - змінна, яка буде зберігати значення елемента на кожній ітерації
+// iterable - колекція, яка містить ітерабельні елементи, наприклад масив
+// const planets = ["Earth", "Mars", "Venus"];
+
+// for (const planet of planets) {
+//     console.log(planet);
+// }
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Виконай рефакторинг коду функції calculateTotalPrice(order), замінивши цикл for на for...of.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція calculateTotalPrice(order)
+// Виклик функції calculateTotalPrice([12, 85, 37, 4]) повертає 138
+// Виклик функції calculateTotalPrice([164, 48, 291]) повертає 503
+// Виклик функції calculateTotalPrice([412, 371, 94, 63, 176]) повертає 1116
+// Виклик функції calculateTotalPrice([]) повертає 0
+// Виклик функції calculateTotalPrice() з випадковим масивом чисел повертає правильну суму
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
 // function calculateTotalPrice(order) {
-//   let total = 0;
-
-//   for (const element of order) {
-//     total += element;
-//   }
-
-//   return total;
-// }
-
-// ------------------------------Задача 27------------------------------------
-// function filterArray(numbers, value) {
-//   const filteredNumbers = [];
-
-//   for (const number of numbers) {
-//     if (number > value) {
-//       filteredNumbers.push(number);
+//     let total = 0;
+//     // Change code below this line
+//     for (let i = 0; i < order.length; i += 1) {
+//         total += order[i];
 //     }
-//   }
-//   return filteredNumbers;
+//     // Change code above this line
+//     return total;
 // }
 
-// ------------------------------Задача 28------------------------------------
-// const a = 3 % 1;
+// // After
+
+// function calculateTotalPrice(order) {
+//     let total = 0;
+//     for (const number of order) {
+//         total += number;
+//     }
+//     return total;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-27
+// ЗАЧАДА: ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ 2.0
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Виконай рефакторинг функції filterArray(numbers, value), замінивши цикл for на for...of.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція filterArray(numbers, value)
+// Виклик функції filterArray([1, 2, 3, 4, 5], 3) повертає[4, 5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 4) повертає[5]
+// Виклик функції filterArray([1, 2, 3, 4, 5], 5) повертає[]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 38) повертає[41, 76]
+// Виклик функції filterArray([12, 24, 8, 41, 76], 20) повертає[24, 41, 76]
+// Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+// Функція calculateTotalPrice() використовує цикл for..of
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function filterArray(numbers, value) {
+//     // Change code below this line
+//     const filteredNumbers = [];
+//     for (let i = 0; i < numbers.length; i += 1) {
+//         const number = numbers[i];
+//         if (number > value) {
+//             filteredNumbers.push(number);
+//         }
+//     }
+//     return filteredNumbers;
+//     // Change code above this line
+// }
+
+// // After
+
+// function filterArray(numbers, value) {
+//     const filteredNumbers = [];
+//     for (const i of numbers) {
+//         if (i > value) {
+//             filteredNumbers.push(i);
+//         }
+//     }
+//     return filteredNumbers;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-28
+// ОПЕРАТОР %
+// Замість того, щоб повертати результат ділення, операція за модулем(%)
+// повертає цілочисельну остачу від ділення двох чисел - діленого і дільника.
+
+// 5 % 1 = 0;
+// // 5, поділене на 1, дорівнює 5, а остача - 0
+
+// 5 % 2 = 1;
+// //  5, поділене на 2, дорівнює 2, а остача - 1
+
+// 5 % 3 = 2;
+// //  5, поділене на 3, дорівнює 1, а остача - 2
+
+// 5 % 4 = 1;
+// //  5, поділене на 4, дорівнює 1, а остача - 1
+
+// 5 % 5 = 0;
+// //  5, поділене на 5, дорівнює 1, а остача - 0
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни вираз остачі від ділення таким чином, щоб код проходив тести.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна a
+// Значення змінної a - це число 0
+// Оголошена змінна b
+// Значення змінної b - це число 1
+// Оголошена змінна c
+// Значення змінної c - це число 3
+// Оголошена змінна d
+// Значення змінної d - це число 5
+// Оголошена змінна e
+// Значення змінної e - це число 2
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const a = 3 % ;
+// const b = 4 % ;
+// const c = 11 % ;
+// const d = 12 % ;
+// const e = 8 % ;
+
+// // After
+
+// const a = 3 % 3;
 // const b = 4 % 3;
 // const c = 11 % 8;
 // const d = 12 % 7;
-// const e = 8 % 3;
-
-// ------------------------------Задача 29------------------------------------
-// function getEvenNumbers(start, end) {
-//   let array = [];
-//   for (let i = start; i <= end; i += 1) {
-//     if (i % 2 === 0) {
-//       array.push(i);
-//     }
-//   }
-//   return array;
-// }
-
-// console.log(getEvenNumbers(2, 5)); // [2, 4]
-// console.log(getEvenNumbers(3, 11)); // [4, 6, 8, 10]
-// console.log(getEvenNumbers(6, 12)); // [6, 8, 10, 12]
-// console.log(getEvenNumbers(8, 8)); // [8]
-
-// ------------------------------Задача 30------------------------------------
-// const start = 6;
-// const end = 27;
-// let number;
-
-// for (let i = start; i < end; i += 1) {
-//   if (i % 5 === 0) {
-//     number = i;
-//     break;
-//   }
-// }
-
-// ------------------------------Задача 31------------------------------------
-// function findNumber(start, end, divisor) {
-//   // Change code below this line
-//   let number;
-
-//   for (let i = start; i < end; i += 1) {
-//     if (i % divisor === 0) {
-//       number = i;
-//       return number;
-//     }
-//   }
-
-//   // Change code above this line
-// }
-
-// ------------------------------Задача 32------------------------------------
-// function includes(array, value) {
-//   for (const arr of array) {
-//     console.log(arr);
-//     if (arr === value) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
-// console.log(includes([1, 2, 3, 4, 5], 3)); // [true]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const e = 8 % 6;
 
 
 
 // ###########################################################################################################################################################
 
-// // ==========================================Task-
+// // ==========================================Task-29
+// ЗАДАЧА: ПАРНІ ЧИСЛА
 
-// //  --------------------===================== Сonditions --------------------=====================
+// //  --------------------===================== Сonditions =====================--------------------
+// Напиши функцію getEvenNumbers(start, end), яка повертає масив усіх парних чисел від start до end.
+// Парним вважається число, яке ділиться на 2 без остачі(10 % 2 === 0).
 
-// //  --------------------===================== Test --------------------=====================
+// //  --------------------===================== Tests =====================--------------------
 
-// // --------------------===================== Result --------------------=====================
+// Оголошена функція getEvenNumbers(start, end)
+// Виклик функції getEvenNumbers(2, 5) повертає[2, 4]
+// Виклик функції getEvenNumbers(3, 11) повертає[4, 6, 8, 10]
+// Виклик функції getEvenNumbers(6, 12) повертає[6, 8, 10, 12]
+// Виклик функції getEvenNumbers(8, 8) повертає[8]
+// Виклик функції getEvenNumbers(7, 7) повертає[]
+// Виклик функції getEvenNumbers() з випадковими start і end повертає правильний масив
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function getEvenNumbers(start, end) {
+//     // Change code below this line
+// }
+
+// // After
+
+// function getEvenNumbers(start, end) {
+//     let mass = [];
+//     for (let i = start; i <= end; i += 1) {
+//         if (i % 2 === 0) {
+//             mass.push(i);
+//             continue;
+//         }
+//     }
+//     return mass;
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-30
+// ОПЕРАТОР BREAK
+// Перервати виконання циклу можна в будь - який момент.Для цього існує оператор break,
+// кий повністю припиняє виконання циклу і передає управління на рядок за його тілом.
+
+// У прикладі шукаємо число 3. Щойно виконається умова if, цикл припинить своє виконання(буде перерваний).
+
+//     for(let i = 0; i <= 5; i += 1) {
+//     console.log(i);
+//     if (i === 3) {
+//         console.log("Знайшли число 3, перериваємо виконання циклу");
+//         break;
+//     }
+// }
+// console.log("Лог після циклу");
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни код таким чином, щоб у змінну number записувалося перше число від start до end, яке ділиться на 5 без остачі.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна start зі значенням 6
+// Оголошена змінна end зі значенням 27
+// Оголошена змінна number без ініціалізації
+// Підсумкове значення змінної number дорівнює 10
+// В циклі for використовується break для виходу до завершення усіх ітерацій циклу
+
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const start = 6;
+// const end = 27;
+// let number;
+// for (let i = start; i < end; i += 1) {
+//     if (i % 5 === 0) {
+//         number = i;
+//     }
+// }
+
+// // After
+
+// const start = 6;
+// const end = 27;
+// let number;
+// for (let i = start; i < end; i += 1) {
+//     if (i % 5 === 0) {
+//         number = i;
+//         break;
+//     }
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-31
+// ОПЕРАТОР BREAK VS RETURN У ФУНКЦІЇ
+// Якщо цикл знаходиться в тілі функції, то оператор break не припиняє виконання функції,
+// а тільки перерве цикл.Для того щоб переривати виконання відразу циклу і функції, є оператор return.
+
+// У прикладі шукаємо число 3. Щойно виконається умова if, робимо повернення,
+// яке перерве виконання циклу і функції.
+
+// function fn() {
+//     for (let i = 0; i <= 5; i += 1) {
+//         console.log(i);
+
+//         if (i === 3) {
+//             console.log("Знайшли число 3, робимо повернення, перериваючи цикл і функцію");
+//             return i;
+//         }
+//     }
+
+//     // Цей console.log не виконається
+//     console.log("Лог після циклу в тілі функції");
+// }
+
+// const result = fn();
+// console.log("Лог після виходу з функції");
+// console.lof(`Результат виконання функції ${result}`);
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Виконай рефакторинг функції findNumber(start, end, divisor) таким чином, щоб вона:
+
+// повертала перше число від start до end, яке ділиться на divisor без остачі
+// не використала оператор break
+// не використала змінну number
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція findNumber(start, end, divisor)
+// Виклик findNumber(2, 6, 5) повертає 5
+// Виклик findNumber(8, 17, 3) повертає 9
+// Виклик findNumber(6, 9, 4) повертає 8
+// Виклик findNumber(16, 35, 7) повертає 21
+// Виклик findNumber() з випадковим набором чисел повертає правильний результат
+// В циклі for не повинен використовуватися break для виходу до завершення всіх ітерацій циклу
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function findNumber(start, end, divisor) {
+//     // Change code below this line
+//     let number;
+//     for (let i = start; i < end; i += 1) {
+//         if (i % divisor === 0) {
+//             number = i;
+//             break;
+//         }
+//     }
+//     return number;
+//     // Change code above this line
+// }
+
+// // After
+
+// function findNumber(start, end, divisor) {
+//     let number;
+//     for (let i = start; i < end; i += 1) {
+//         if (i % divisor === 0) {
+//             return i;
+//         }
+//     }
+// }
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-32
+// ЗАДАЧА: ФУНКЦІЯ INCLUDES()
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Напиши функцію includes(array, value), яка робить те саме, що і метод масиву масив.includes(значення) -
+// перевіряє, чи присутнє в масиві array значення value, повертаючи true, якщо присутнє, і false в іншому випадку.
+
+// При виконанні цього завдання в тілі функції includes() не можна використовувати метод масив.includes(значення).
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена функція includes(array, value)
+// Виклик includes([1, 2, 3, 4, 5], 3) повертає true
+// Виклик includes([1, 2, 3, 4, 5], 17) повертає false
+// Виклик includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") повертає true
+// Виклик includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus") повертає false
+// Виклик includes(["apple", "plum", "pear", "orange"], "plum") повертає true
+// Виклик includes(["apple", "plum", "pear", "orange"], "kiwi") повертає false
+// Виклик includes() для випадкового масиву з випадковим value повертає правильний boolean
+// У функції includes використовується for, return, але не метод масиву includes
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// function includes(array, value) {
+//     // Change code above this line
+// }
+
+// // After
+
+// function includes(array, value) {
+//     for (let i = 0; i < array.length; i += 1) {
+//         if (array[i] === value) {
+//             return true
+//         }
+//     }
+//     return false;
+// }
