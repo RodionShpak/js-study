@@ -2975,11 +2975,328 @@
 // ###########################################################################################################################################################
 
 // // ==========================================Task-36
-ЗАДАЧА.ЗАГАЛЬНИЙ БАЛАНС КОРИСТУВАЧІВ
+// ЗАДАЧА.ЗАГАЛЬНИЙ БАЛАНС КОРИСТУВАЧІВ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
 
 // //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію calculateTotalBalance(users) таким чином,
+// щоб вона рахувала і повертала суму всіх коштів(властивість balance),
+// які зберігають користувачі з масиву users.
 
 // //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна calculateTotalBalance
+// Змінній calculateTotalBalance присвоєна стрілочна функція з параметром(users)
+// Для перебирання параметра users використовується метод reduce()
+// Виклик функції із зазначеним масивом користувачів повертає число 20916
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const calculateTotalBalance = users => {
+// };
+// // Change code above this line
+
+// // After
+
+// const calculateTotalBalance = (users) =>
+// users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-37
+// ЗАДАЧА.ЗАГАЛЬНА КІЛЬКІСТЬ ДРУЗІВ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getTotalFriendCount(users) таким чином,
+// щоб вона рахувала і повертала загальну кількість друзів(властивість friends) усіх користувачів з масиву users.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getTotalFriendCount
+// Змінній getTotalFriendCount присвоєна стрілочна функція з параметром(users)
+// Для перебирання параметра users використовується метод reduce()
+// Виклик функції із зазначеним масивом користувачів повертає число 14
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getTotalFriendCount = users => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getTotalFriendCount = (users) =>
+// users.reduce((totalFriends, user) => totalFriends + user.friends.length, 0);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-38
+// МЕТОД SORT()
+// Метод sort() сортує елементи масиву, але на відміну від інших методів перебирання, він сортує вихідний масив.
+
+// Сортує і змінює вихідний масив.
+// Повертає змінений масив, тобто посилання на відсортований вихідний.
+// За замовчуванням сортує за зростанням.
+// Сортування відбувається шляхом приведення значень до рядка і порівняння порядкових номерів у таблиці Unicode.
+// Такий масив чисел буде відсортований за зростанням.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log(scores); // [19, 35, 56, 61, 74, 92]
+// Але, оскільки за замовчуванням значення приводяться до рядка, стандартне сортування чисел працює незвично.
+// Тому, у наступній вправі ми розглянемо як задавати свій порядок сортування.
+
+// const scores = [27, 2, 41, 4, 7, 3, 75];
+// scores.sort();
+// console.log(scores); // [2, 27, 3, 4, 41, 7, 75]
+// Масив рядків сортується за алфавітом.
+
+// const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+// students.sort();
+// console.log(students); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+// Водночас порядковий номер великих літер менший, ніж у малих.
+
+// const letters = ["b", "B", "a", "A", "c", "C"];
+// letters.sort();
+// console.log(letters); // ["A", "B", "C", "a", "b", "c"]
+// Через те, що сортується вихідний масив,
+// порушується принцип чистоти функцій і не можна зручно створити декілька похідних колекцій на основі вихідної.
+// Наприклад, створити колекцію, відсортовану за зростанням, а іншу - за спаданням.
+// Тому перед сортуванням роблять повну копію вихідного масиву і сортують вже її.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни код таким чином, щоб у змінній ascendingReleaseDates вийшла копія масиву releaseDates,
+// відсортована за зростанням, а у змінній alphabeticalAuthors - копія масиву імен авторів authors, відсортована за алфавітом.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна releaseDates
+// Значення змінної releaseDates - це масив[2016, 1967, 2008, 1984, 1973, 2012, 1997]
+// Оголошена змінна authors
+// Значення змінної authors - це масив["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky"]
+// Оголошена змінна ascendingReleaseDates
+// Значення змінної ascendingReleaseDates - це масив[1967, 1973, 1984, 1997, 2008, 2012, 2016]
+// Оголошена змінна alphabeticalAuthors
+// Значення змінної alphabeticalAuthors - це масив["Bernard Cornwell", "Tanith Lee", "Robert Sheckley", "Fyodor Dostoevsky"]
+// Використаний метод sort()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//     "Tanith Lee",
+//     "Bernard Cornwell",
+//     "Robert Sheckley",
+//     "Fyodor Dostoevsky",
+// ];
+// // Change code below this line
+// const ascendingReleaseDates = releaseDates;
+// const alphabeticalAuthors = authors;
+
+// // After
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//     "Tanith Lee",
+//     "Bernard Cornwell",
+//     "Robert Sheckley",
+//     "Fyodor Dostoevsky",
+// ];
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+// const alphabeticalAuthors = [...authors].sort((a, b) => a.localeCompare(b));
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-39
+// СВІЙ ПОРЯДОК СОРТУВАННЯ ЧИСЕЛ
+// Для зазначення свого порядку сортування методу sort(compareFunction) потрібно передати колбек - функцію з двома параметрами.
+// Це функція порівняння(compare function), порядок сортування залежить від її результату.
+// Метод sort() буде викликати її для двох довільних елементів.
+
+//     масив.sort((a, b) => {
+//         // Callback function body
+//     });
+// a - перший елемент для порівняння.
+//     b - другий елемент для порівняння.
+// Якщо виклик compareFunction(a, b) повертає будь - яке від'ємне значення,
+// тобто a менше b, сортування поставить a перед b. Це сортування за зростанням.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort((a, b) => a - b);
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// Якщо виклик compareFunction(a, b) повертає будь - яке додатне значення більше нуля,
+// тобто b більше a, сортування поставить b перед a.Це сортування за спаданням.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const descendingScores = [...scores].sort((a, b) => b - a);
+// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+// Якщо виклик compareFunction(a, b) поверне 0, сортування залишить a і b незмінними по відношенню один до одного,
+// але відсортує їх по відношенню до всіх інших елементів.
+// Але взагалі неважливо, що повертати, якщо їх взаємний порядок не має значення.
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Онлайн бібіліотеці необхідно відображати книги, відсортовані за датою видання, за її зростанням або спаданням.
+// Доповни код таким чином, щоб у змінній ascendingReleaseDates вийшла копія масиву releaseDates,
+// відсортована за зростанням, а у змінній descendingReleaseDates - копія, відсортована за спаданням.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна releaseDates
+// Значення змінної releaseDates - це масив[2016, 1967, 2008, 1984, 1973, 2012, 1997]
+// Оголошена змінна ascendingReleaseDates
+// Значення змінної ascendingReleaseDates - це масив[1967, 1973, 1984, 1997, 2008, 2012, 2016]
+// Оголошена змінна descendingReleaseDates
+// Значення змінної descendingReleaseDates - це масив[2016, 2012, 2008, 1997, 1984, 1973, 1967]
+// Використаний метод sort()
 
 // //  --------------------===================== Result =====================--------------------
 
@@ -2987,6 +3304,20 @@
 
 
 // // After
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
