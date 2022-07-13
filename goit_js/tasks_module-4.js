@@ -1398,21 +1398,1584 @@
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-20
+// ФІЛЬТРАЦІЯ УНІКАЛЬНИХ ЕЛЕМЕНТІВ
+// Використовуючи метод filter(), можна виконати фільтрацію масиву таким чином,
+//     що у ньому залишаться тільки унікальні елементи.
+//     Цей прийом працює тільки з масивом примітивних значень - не об'єктів.
+
+// Повернемося до групи студентів і масиву усіх відвідуваних предметів, які ми отримали методом flatMap().
+
+// const students = [
+//     { name: "Mango", courses: ["mathematics", "physics"] },
+//     { name: "Poly", courses: ["science", "mathematics"] },
+//     { name: "Kiwi", courses: ["physics", "biology"] },
+// ];
+
+// const allCourses = students.flatMap(student => student.courses);
+// // ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+// У змінній allCourses зберігається масив усіх відвідуваних предметів, які можуть повторюватися.
+// Завдання полягає у тому, щоб створити новий масив, в якому будуть тільки унікальні предмети, тобто без повторень.
+
+// const uniqueCourses = allCourses.filter(
+//     (course, index, array) => array.indexOf(course) === index
+// );
+// Використовуючи array.indexOf(course), виконуємо пошук першого збігу поточного елемента course і
+// отримуємо його індекс в оригінальному масиві усіх курсів.
+// В параметрі index зберігається індекс поточного елемента course, перебираючи масив методом filter.
+
+// Якщо результат indexOf() і значення index рівні - це унікальний елемент,
+//     тому що таке значення зустрічається в масиві вперше, і на поточній ітерації фільтр обробляє саме його.
+
+// # Масив усіх курсів
+// ["mathematics", "physics", "science", "mathematics", "physics", "biology"];
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни код таким чином, щоб у змінній allGenres був масив всіх жанрів книг(властивість genres) з масиву books,
+//     а у змінній uniqueGenres - масив унікальних жанрів, без повторень.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна books
+// Значення змінної books - це масив об'єктів
+// Оголошена змінна allGenres
+// Значення змінної allGenres - це масив["adventure", "history", "fiction", "mysticism", "horror", "mysticism", "adventure"]
+// Оголошена змінна uniqueGenres
+// Значення змінної uniqueGenres - це масив["adventure", "history", "fiction", "mysticism", "horror"]
+// Для обчислення значення змінної allGenders використаний метод flatMap()
+// Для обчислення значення змінної uniqueGenres використаний метод filter()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const books = [
+//     {
+//         title: "The Last Kingdom",
+//         author: "Bernard Cornwell",
+//         genres: ["adventure", "history"],
+//     },
+//     {
+//         title: "Beside Still Waters",
+//         author: "Robert Sheckley",
+//         genres: ["fiction", "mysticism"],
+//     },
+//     {
+//         title: "Redder Than Blood",
+//         author: "Tanith Lee",
+//         genres: ["horror", "mysticism", "adventure"],
+//     },
+// ];
+// // Change code below this line
+// const allGenres = books;
+// const uniqueGenres = allGenres;
+
+// // After
+
+// const books = [
+//     {
+//         title: "The Last Kingdom",
+//         author: "Bernard Cornwell",
+//         genres: ["adventure", "history"],
+//     },
+//     {
+//         title: "Beside Still Waters",
+//         author: "Robert Sheckley",
+//         genres: ["fiction", "mysticism"],
+//     },
+//     {
+//         title: "Redder Than Blood",
+//         author: "Tanith Lee",
+//         genres: ["horror", "mysticism", "adventure"],
+//     },
+// ];
+// const allGenres = books.flatMap((book) => book.genres);
+// const uniqueGenres = allGenres.filter(
+//     (genre, index, array) => array.indexOf(genre) === index
+// );
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-21
+// МЕТОД FILTER() І МАСИВ ОБ'ЄКТІВ
+// Під час роботи з масивом об'єктів виконується фільтрація за значенням певної властивості.
+// У підсумку, утворюється новий масив відфільтрованих об'єктів.
+
+// Наприклад, у нас є масив студентів з балами за тест.
+// Необхідно відфільтрувати кращих(бал вище 80), гірших(бал нижче 50) і середніх студентів(бал від 50 до 80).
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//     { name: "Mango", score: 83 },
+//     { name: "Poly", score: 59 },
+//     { name: "Ajax", score: 37 },
+//     { name: "Kiwi", score: 94 },
+//     { name: "Houston", score: 64 },
+// ];
+
+// const best = students.filter(student => student.score >= HIGH_SCORE);
+// console.log(best); // Масив об'єктів з іменами Mango і Kiwi
+
+// const worst = students.filter(student => student.score < LOW_SCORE);
+// console.log(worst); // Масив з одним об'єктом Ajax
+
+// // В колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(
+//     ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Масив об'єктів з іменами Poly і Houston
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Використовуючи метод filter(), доповни код таким чином, щоб:
+// У змінній topRatedBooks утворився масив книг, рейтинг яких(властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+// У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна books
+// Значення змінної books - це масив об'єктів
+// Оголошена змінна MIN_RATING
+// Значення змінної MIN_RATING - це число 8
+// Оголошена змінна AUTHOR
+// Значення змінної AUTHOR - це рядок "Bernard Cornwell"
+// Оголошена змінна topRatedBooks
+// Значення змінної topRatedBooks - це масив книг з рейтингом, вищим за 8
+// Оголошена змінна booksByAuthor
+// Значення змінної booksByAuthor - це масив книг, автор яких "Bernard Cornwell"
+// Для перебирання масиву books використаний метод filter()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const books = [
+//     {
+//         title: "The Last Kingdom",
+//         author: "Bernard Cornwell",
+//         rating: 8.38,
+//     },
+//     {
+//         title: "Beside Still Waters",
+//         author: "Robert Sheckley",
+//         rating: 8.51,
+//     },
+//     {
+//         title: "The Dream of a Ridiculous Man",
+//         author: "Fyodor Dostoevsky",
+//         rating: 7.75,
+//     },
+//     { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//     { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// // Change code below this line
+// const topRatedBooks = books;
+// const booksByAuthor = books;
+
+// // After
+
+// const books = [
+//     {
+//         title: "The Last Kingdom",
+//         author: "Bernard Cornwell",
+//         rating: 8.38,
+//     },
+//     {
+//         title: "Beside Still Waters",
+//         author: "Robert Sheckley",
+//         rating: 8.51,
+//     },
+//     {
+//         title: "The Dream of a Ridiculous Man",
+//         author: "Fyodor Dostoevsky",
+//         rating: 7.75,
+//     },
+//     { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//     { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// const topRatedBooks = books.filter((book) => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter((book) => book.author === AUTHOR);
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-22
+// ЗАДАЧА.КОРИСТУВАЧІ З КОЛЬОРОМ ОЧЕЙ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getUsersWithEyeColor(users, color) таким чином,
+// щоб вона повертала масив користувачів, у яких колір очей(властивість eyeColor) збігається зі значенням параметра color.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна getUsersWithEyeColor
+// Змінній getUsersWithEyeColor присвоєна стрілочна функція з параметрами(users, color)
+// Для перебирання параметра users використовується метод filter()
+// Якщо значення параметра color - це "blue", функція повертає масив об'єктів користувачів з іменами Moore Hensley, Sharlene Bush і Carey Barr
+// Якщо значення параметра color - це "green", функція повертає масив об'єктів користувачів з іменами Ross Vazquez і Elma Head
+// Якщо значення параметра color - це "brown", функція повертає масив об'єктів користувачів з іменами Blackburn Dotson і Sheree Anthony
+// Якщо значення параметра color - це будь - який інший рядок, функція повертає порожній масив
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getUsersWithEyeColor = (users, color) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getUsersWithEyeColor = (users, color) =>
+// users.filter((user) => user.eyeColor === color);
 
 
 
+// ###########################################################################################################################################################
+
+// // ==========================================Task-23
+// ЗАДАЧА.КОРИСТУВАЧІ У ВІКОВІЙ КАТЕГОРІЇ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male",
+//         age: 37
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female",
+//         age: 34
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male",
+//         age: 24
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female",
+//         age: 21
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male",
+//         age: 27
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male",
+//         age: 38
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female",
+//         age: 39
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getUsersWithAge(users, minAge, maxAge) таким чином, щоб вона повертала масив користувачів,
+//     вік яких(властивість age) потрапляє у проміжок від minAge до maxAge.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getUsersWithAge
+// Змінній getUsersWithAge присвоєна стрілочна функція з параметрами(users, minAge, maxAge)
+// Для перебирання параметра users використовується метод filter()
+// Якщо значення параметрів minAge і maxAge дорівнюють 20 і 30 відповідно,
+//     функція повертає масив об'єктів користувачів з іменами Ross Vazquez, Elma Head і Carey Barr
+// Якщо значення параметрів minAge і maxAge дорівнюють 30 і 40 відповідно,
+//     функція повертає масив об'єктів користувачів з іменами Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony
+// Якщо значення параметрів minAge і maxAge дорівнюють 80 і 100 відповідно,
+//     функція повертає порожній масив
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getUsersWithAge = (users, minAge, maxAge) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getUsersWithAge = (users, minAge, maxAge) =>
+// users.filter(({ age }) => age >= minAge && age <= maxAge);
 
 
 
 // ###########################################################################################################################################################
 
 // // ==========================================Task-24
+// ЗАДАЧА.КОРИСТУВАЧІ З ДРУГОМ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male",
+//         age: 37
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female",
+//         age: 34
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male",
+//         age: 24
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female",
+//         age: 21
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male",
+//         age: 27
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male",
+//         age: 38
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female",
+//         age: 39
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів,
+// у яких є один з ім'ям в параметрі friendName. Масив друзів користувача зберігається у властивості friends.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getUsersWithFriend
+// Змінній getUsersWithFriend присвоєна стрілочна функція з параметрами(users, friendName)
+// Для перебирання параметра users використовується метод filter()
+// Якщо значення параметра friendName - це рядок "Briana Decker",
+//     функція повертає масив об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
+// Якщо значення параметра friendName - це рядок "Goldie Gentry",
+//     функція повертає масив об'єктів користувачів з іменами Elma Head і Sheree Anthony
+// Якщо значення параметра friendName - це рядок "Adrian Cross",
+//     функція повертає порожній масив
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getUsersWithFriend = (users, friendName) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getUsersWithFriend = (users, friendName) =>
+//     users.filter((user) => user.friends.includes(friendName));
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-25
+// ЗАДАЧА.СПИСОК ДРУЗІВ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male",
+//         age: 37
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female",
+//         age: 34
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male",
+//         age: 24
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female",
+//         age: 21
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male",
+//         age: 27
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male",
+//         age: 38
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female",
+//         age: 39
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getFriends(users) таким чином, щоб вона повертала масив друзів всіх користувачів(властивість friends).
+// У декількох користувачів можуть бути однакові друзі, зроби так, щоб масив, що повертається, не містив повторень.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getFriends
+// Змінній getFriends присвоєна стрілочна функція з параметром(users)
+// Виклик функції із зазначеним масивом користувачів повертає масив["Sharron Pace", "Briana Decker",
+//     "Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner", "Goldie Gentry", "Aisha Tran",
+//     "Jordan Sampson", "Eddie Strong", "Jacklyn Lucas", "Linda Chapman"]
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getFriends = (users) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getFriends = (users) =>
+//     users
+//         .flatMap((user) => user.friends)
+//         .filter((friend, index, array) => array.indexOf(friend) === index);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-26
+// ЗАДАЧА.АКТИВНІ КОРИСТУВАЧІ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male",
+//         age: 37
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female",
+//         age: 34
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male",
+//         age: 24
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female",
+//         age: 21
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male",
+//         age: 27
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male",
+//         age: 38
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female",
+//         age: 39
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getActiveUsers(users) таким чином,
+//     щоб вона повертала масив активних користувачів,
+//         значення властивості isActive яких - true.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getActiveUsers Змінній getActiveUsers присвоєна стрілочна функція з параметром users
+// Для перебирання параметра users використовується метод filter()
+// Виклик функції із зазначеним масивом користувачів повертає масив
+// об'єктів користувачів з іменами Sharlene Bush, Elma Head, Carey Barr і Sheree Anthony
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getActiveUsers = (users) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getActiveUsers = (users) =>
+//     users.filter((user) => user.isActive === true);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-27
+// ЗАДАЧА.НЕАКТИВНІ КОРИСТУВАЧІ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male",
+//         age: 37
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female",
+//         age: 34
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male",
+//         age: 24
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female",
+//         age: 21
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male",
+//         age: 27
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male",
+//         age: 38
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female",
+//         age: 39
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getInactiveUsers(users) таким чином,
+// щоб вона повертала масив неактивних користувачів,
+// значення властивості isActive яких - false.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна getInactiveUsers.
+// Змінній getInactiveUsers присвоєна стрілочна функція з параметром users
+// Для перебирання параметра users використовується метод filter()
+// Виклик функції із зазначеним масивом користувачів повертає масив
+// об'єктів користувачів з іменами Moore Hensley, Ross Vazquez і Blackburn Dotson
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getInactiveUsers = (users) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getInactiveUsers = (users) =>
+//     users.filter((user) => user.isActive === false);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-28
+// МЕТОД FIND()
+// Якщо метод filter(callack) використовується для пошуку всіх елементів, що задовольняють умову,
+// то метод find(callback) дозволяє знайти і повернути перший відповідний елемент,після чого перебирання масиву припиняється.
+// Тобто він шукає до першого збігу.
+
+//     масив.find((element, index, array) => {
+//         // Тіло колбек-функції
+//     });
+// Не змінює оригінальний масив.
+// Поелементо перебирає оригінальний масив.
+// Повертає перший елемент, що задовольняє умову, тобто коли колбек повертає true.
+// Якщо жоден елемент не задовольнив умову, тобто для всіх елементів колбек повернув false, метод повертає undefined.
+// Метод find() використовується для одного завдання - пошуку елемента за унікальним значенням властивості.
+// Наприклад, пошук користувача за поштою, автомобіля - за серійним номером, книги - за назвою тощо.
+
+// const colorPickerOptions = [
+//     { label: "red", color: "#F44336" },
+//     { label: "green", color: "#4CAF50" },
+//     { label: "blue", color: "#2196F3" },
+//     { label: "pink", color: "#E91E63" },
+//     { label: "indigo", color: "#3F51B5" },
+// ];
+
+// colorPickerOptions.find((option) => option.label === "blue"); // { label: "blue", color: "#2196F3" }
+// colorPickerOptions.find((option) => option.label === "pink"); // { label: "pink", color: "#E91E63" }
+// colorPickerOptions.find((option) => option.label === "white"); // undefined
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Використовуючи метод find(), доповни код таким чином, щоб:
+
+// У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+// У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
+
+// //  --------------------===================== Tests =====================--------------------
+
+// Оголошена змінна books
+// Значення змінної books - це масив
+// Оголошена змінна BOOK_TITLE
+// Значення змінної BOOK_TITLE - це рядок "The Dream of a Ridiculous Man"
+// Оголошена змінна AUTHOR
+// Значення змінної AUTHOR - це рядок "Robert Sheckley"
+// Оголошена змінна bookWithTitle
+// Значення змінної bookWithTitle - це об'єкт книги з назвою вище "The Dream of a Ridiculous Man"
+// Оголошена змінна bookByAuthor
+// Значення змінної bookByAuthor - це об'єкт книги автора "Robert Sheckley"
+// Для перебирання масиву books використаний метод find()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const books = [
+//     {
+//         title: 'The Last Kingdom',
+//         author: 'Bernard Cornwell',
+//         rating: 8.38,
+//     },
+//     {
+//         title: 'Beside Still Waters',
+//         author: 'Robert Sheckley',
+//         rating: 8.51,
+//     },
+//     {
+//         title: 'The Dream of a Ridiculous Man',
+//         author: 'Fyodor Dostoevsky',
+//         rating: 7.75,
+//     },
+//     { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+// // Change code below this line
+// const bookWithTitle = books;
+// const bookByAuthor = books;
+
+// // After
+
+// const books = [
+//     {
+//         title: 'The Last Kingdom',
+//         author: 'Bernard Cornwell',
+//         rating: 8.38,
+//     },
+//     {
+//         title: 'Beside Still Waters',
+//         author: 'Robert Sheckley',
+//         rating: 8.51,
+//     },
+//     {
+//         title: 'The Dream of a Ridiculous Man',
+//         author: 'Fyodor Dostoevsky',
+//         rating: 7.75,
+//     },
+//     { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+// const bookWithTitle = books.find((option) => option.title === BOOK_TITLE);
+// const bookByAuthor = books.find((option) => option.author === AUTHOR);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-29
+// ЗАДАЧА.КОРИСТУВАЧ З ПОШТОЮ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача,
+// пошта якого(властивість email) збігається зі значенням параметра email.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена функція getUserWithEmail(users, email)
+// Для перебирання параметра users використовується метод find()
+// Якщо значення параметра email - це "shereeanthony@kog.com", функція повертає об'єкт користувача з ім'ям Sheree Anthony
+// Якщо значення параметра email - це "elmahead@omatom.com", функція повертає об'єкт користувача з ім'ям Elma Head
+// Якщо значення параметра email - це "blackburndotson@furnigeer.com", функція повертає об'єкт користувача з ім'ям Blackburn Dotson
+// Якщо в масиві users відсутній користувач з поштою із параметра email, функція повертає undefined
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const getUserWithEmail = (users, email) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const getUserWithEmail = (users, email) =>
+// users.find((option) => option.email === email);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-30
+// МЕТОД EVERY()
+// Метод every(callback) перевіряє, чи проходять всі елементи масиву тест колбек - функції.
+// Повертає true або false.
+
+//     масив.every((element, index, array) => {
+//         // Тіло колбек-функції
+//     });
+// Не змінює оригінальний масив.
+// Поелементо перебирає оригінальний масив.
+// Повертає true, якщо всі елементи масиву задовольняють умову.
+// Повертає false, якщо хоча б один елемент масиву не задовольняє умову.
+// Перебирання масиву припиняється, якщо колбек повертає false.
+// // Усі елементи більші або дорівнюють нулю? - так
+// [1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// // Усі елементи більші або дорівнюють нулю? - ні
+// [1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+// При роботі з масивом об'єктів перевіряється значення якоїсь їх властивості.
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Використовуючи метод every(), доповни код таким чином, щоб:
+// У змінній eachElementInFirstIsEven був результат перевірки всіх елементів масиву firstArray на парність.
+// У змінній eachElementInFirstIsOdd був результат перевірки всіх елементів масиву firstArray на непарність.
+// У змінній eachElementInSecondIsEven був результат перевірки всіх елементів масиву secondArray на парність.
+// У змінній eachElementInSecondIsOdd був результат перевірки всіх елементів масиву secondArray на непарність.
+// У змінній eachElementInThirdIsEven був результат перевірки всіх елементів масиву thirdArray на парність.
+// У змінній eachElementInThirdIsOdd був результат перевірки всіх елементів масиву thirdArray на непарність.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна firstArray
+// Значення змінної firstArray - це масив[26, 94, 36, 18]
+// Оголошена змінна secondArray
+// Значення змінної secondArray - це масив[17, 61, 23]
+// Оголошена змінна thirdArray
+// Значення змінної thirdArray - це масив[17, 26, 94, 61, 36, 23, 18]
+// Оголошена змінна eachElementInFirstIsEven
+// Значення змінної eachElementInFirstIsEven - це буль true
+// Оголошена змінна eachElementInFirstIsOdd
+// Значення змінної eachElementInFirstIsOdd - це буль false
+// Оголошена змінна eachElementInSecondIsEven
+// Значення змінної eachElementInSecondIsEven - це буль false
+// Оголошена змінна eachElementInSecondIsOdd
+// Значення змінної eachElementInSecondIsOdd - це буль true
+// Оголошена змінна eachElementInThirdIsEven
+// Значення змінної eachElementInThirdIsEven - це буль false
+// Оголошена змінна eachElementInThirdIsOdd
+// Значення змінної eachElementInThirdIsOdd - це буль false
+// Для перебирання масивів використаний метод every()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change code below this line
+// const eachElementInFirstIsEven = firstArray;
+// const eachElementInFirstIsOdd = firstArray;
+// const eachElementInSecondIsEven = secondArray;
+// const eachElementInSecondIsOdd = secondArray;
+// const eachElementInThirdIsEven = thirdArray;
+// const eachElementInThirdIsOdd = thirdArray;
+
+// // After
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const eachElementInFirstIsEven = firstArray.every((value) => value % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every((value) => value % 2 !== 0);
+// const eachElementInSecondIsEven = secondArray.every((value) => value % 2 === 0);
+// const eachElementInSecondIsOdd = secondArray.every((value) => value % 2 !== 0);
+// const eachElementInThirdIsEven = thirdArray.every((value) => value % 2 === 0);
+// const eachElementInThirdIsOdd = thirdArray.every((value) => value % 2 !== 0);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-31
+// ЗАДАЧА.ЧИ ВСІ КОРИСТУВАЧІ АКТИВНІ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла,
+// чи всі користувачі зараз активні(властивість isActive) і повертала true або false.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна isEveryUserActive
+// Змінній isEveryUserActive присвоєна стрілочна функція з параметром(users)
+// Для перебирання параметра users використовується метод every()
+// Виклик функції із зазначеним масивом користувачів повертає false
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const isEveryUserActive = (users) => {
+// };
+// // Change code above this line
+
+// // After
+
+// const isEveryUserActive = (users) =>
+// users.every((user) => user.isActive === true);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-32
+// МЕТОД SOME()
+// Метод some(callback) перевіряє, чи проходить хоча б один елемент масиву тест колбек - функції.
+// Повертає true або false.
+
+//     масив.some((element, index, array) => {
+//         // Callback function body
+//     });
+// Не змінює оригінальний масив.
+// Поелементо перебирає оригінальний масив.
+// Повертає true, якщо хоча б один елемент масиву задовольняє умову.
+// Повертає false, якщо жоден елемент масиву не задовольняє умову.
+// Перебирання масиву припиняється, якщо колбек повертає true.
+// // Чи є хоча б один елемент, що більший або дорівнює нулю? - так
+// [1, 2, 3, 4, 5].some(value => value >= 0); // true
+
+// // Чи є хоча б один елемент, що більший або дорівнює нулю? - так
+// [-7, -20, 3, -10, -14].some(value => value >= 0); // true
+
+// // Чи є хоча б один елемент, що менший нуля? - ні
+// [1, 2, 3, 4, 5].some(value => value < 0); // false
+
+// // Чи є хоча б один елемент, що менший нуля? - так
+// [1, 2, 3, -10, 4, 5].some(value => value < 0); // true
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Використовуючи метод some(), доповни код таким чином, щоб:
+// У змінній anyElementInFirstIsEven був результат перевірки наявності парних елементів в масиві firstArray.
+// У змінній anyElementInFirstIsOdd був результат перевірки наявності непарних елементів в масиві firstArray.
+// У змінній anyElementInSecondIsEven був результат перевірки наявності парних елементів в масиві secondArray.
+// У змінній anyElementInSecondIsOdd був результат перевірки наявності непарних елементів в масиві secondArray.
+// У змінній anyElementInThirdIsEven був результат перевірки наявності парних елементів в масиві thirdArray.
+// У змінній anyElementInThirdIsOdd був результат перевірки наявності непарних елементів в масиві thirdArray.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна firstArray
+// Значення змінної firstArray - це масив[26, 94, 36, 18]
+// Оголошена змінна secondArray
+// Значення змінної secondArray - це масив[17, 61, 23]
+// Оголошена змінна thirdArray
+// Значення змінної thirdArray - це масив[17, 26, 94, 61, 36, 23, 18]
+// Оголошена змінна anyElementInFirstIsEven
+// Значення змінної anyElementInFirstIsEven - це буль true
+// Оголошена змінна anyElementInFirstIsOdd
+// Значення змінної anyElementInFirstIsOdd - це буль false
+// Оголошена змінна anyElementInSecondIsEven
+// Значення змінної anyElementInSecondIsEven - це буль false
+// Оголошена змінна anyElementInSecondIsOdd
+// Значення змінної anyElementInSecondIsOdd - це буль true
+// Оголошена змінна anyElementInThirdIsEven
+// Значення змінної anyElementInThirdIsEven - це буль true
+// Оголошена змінна anyElementInThirdIsOdd
+// Значення змінної anyElementInThirdIsOdd - це буль true
+// Для перебирання масивів використаний метод some()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change below this line
+// const anyElementInFirstIsEven = firstArray;
+// const anyElementInFirstIsOdd = firstArray;
+// const anyElementInSecondIsEven = secondArray;
+// const anyElementInSecondIsOdd = secondArray;
+// const anyElementInThirdIsEven = thirdArray;
+// const anyElementInThirdIsOdd = thirdArray;
+
+// // After
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const anyElementInFirstIsEven = firstArray.some((value) => value % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some((value) => value % 2 !== 0);
+// const anyElementInSecondIsEven = secondArray.some((value) => value % 2 === 0);
+// const anyElementInSecondIsOdd = secondArray.some((value) => value % 2 !== 0);
+// const anyElementInThirdIsEven = thirdArray.some((value) => value % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some((value) => value % 2 !== 0);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-33
+// ЗАДАЧА.ЧИ Є АКТИВНІ КОРИСТУВАЧІ
+// Цей масив об'єктів ми будемо передавати в параметр users під час виклику функції із завдання.
+// [
+//     {
+//         name: "Moore Hensley",
+//         email: "moorehensley@indexia.com",
+//         eyeColor: "blue",
+//         friends: ["Sharron Pace"],
+//         isActive: false,
+//         balance: 2811,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sharlene Bush",
+//         email: "sharlenebush@tubesys.com",
+//         eyeColor: "blue",
+//         friends: ["Briana Decker", "Sharron Pace"],
+//         isActive: true,
+//         balance: 3821,
+//         gender: "female"
+//     },
+//     {
+//         name: "Ross Vazquez",
+//         email: "rossvazquez@xinware.com",
+//         eyeColor: "green",
+//         friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//         isActive: false,
+//         balance: 3793,
+//         gender: "male"
+//     },
+//     {
+//         name: "Elma Head",
+//         email: "elmahead@omatom.com",
+//         eyeColor: "green",
+//         friends: ["Goldie Gentry", "Aisha Tran"],
+//         isActive: true,
+//         balance: 2278,
+//         gender: "female"
+//     },
+//     {
+//         name: "Carey Barr",
+//         email: "careybarr@nurali.com",
+//         eyeColor: "blue",
+//         friends: ["Jordan Sampson", "Eddie Strong"],
+//         isActive: true,
+//         balance: 3951,
+//         gender: "male"
+//     },
+//     {
+//         name: "Blackburn Dotson",
+//         email: "blackburndotson@furnigeer.com",
+//         eyeColor: "brown",
+//         friends: ["Jacklyn Lucas", "Linda Chapman"],
+//         isActive: false,
+//         balance: 1498,
+//         gender: "male"
+//     },
+//     {
+//         name: "Sheree Anthony",
+//         email: "shereeanthony@kog.com",
+//         eyeColor: "brown",
+//         friends: ["Goldie Gentry", "Briana Decker"],
+//         isActive: true,
+//         balance: 2764,
+//         gender: "female"
+//     }
+// ]
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Доповни функцію isAnyUserActive(users) таким чином,
+// щоб вона перевіряла наявність активних користувачів(властивість isActive) і повертала true або false.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена функція isAnyUserActive(users)
+// Для перебирання параметра users використовується метод some()
+// Виклик функції із зазначеним масивом користувачів повертає true
+// Виклик функції з випадковими, але валідними аргументами, повертає правильне значення
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// // Change code below this line
+// const isAnyUserActive = users => {
+// };
+// // Change code above this line
+
+// // After
+
+// const isAnyUserActive = (users) => users.some((user) => user.isActive === true);
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-34
+// МЕТОД REDUCE()
+// Метод reduce(callback, initialValue) використовується для послідовної обробки кожного елемента масиву із збереженням проміжного результату,
+// як акумулятор.Трохи складніший за інші методи для засвоєння, але результат вартий того.
+
+//     массив.reduce((previousValue, element, index, array) => {
+//         // Тіло колбек-функції
+//     }, initialValue);
+// Не змінює оригінальний масив.
+// Поелементо перебирає оригінальний масив.
+// Повертає все, що завгодно.
+// Робить все, що завгодно.
+// Найлегше уявити його роботу на прикладі підрахунку суми елементів масиву.
+
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//     return previousValue + number;
+// }, 0);
+
+// console.log(total); // 32
+// Перший параметр колбек - функції(previousValue) - це акумулятор, тобто проміжний результат.
+//     Значення, яке поверне колбек - функція на поточній ітерації, буде значенням цього параметра на наступній ітерації.
+
+// Другим аргументом для reduce() можна передати необов'язкове початкове значення акумулятора - параметр initialValue.
+
+// # Спочатку метод reduce() створює внутрішню змінну - акумулятор і
+// # присвоює їй значення параметра initialValue або першого елемента
+// # масиву, що перебирається, якщо initialValue не задане.
+//     previousValue = 0
+
+// # Потім колбек - функція викликається для кожного елемента масиву.Поточне значення
+// # параметра previousValue - це те, що повернула колбек - функція на минулій ітерації.
+//     Ітерація 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Ітерація 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Ітерація 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Ітерація 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Ітерація 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # Після завершення перебирання всього масиву, метод reduce() повертає значення акумулятора.
+//     Результат - 32
+// Тобто метод reduce() використовується, коли необхідно взяти «багато» і привести до «одного».
+// У повсякденних завданнях його застосування зводиться до роботи з числами.
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх.
+// Доповни код таким чином, щоб у змінній totalPlayTime вийшло загальний ігровий час з масиву playtimes.
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна players
+// Значення змінної players - це об'єкт гравців з ігровим часом кожного
+// Оголошена змінна playtimes
+// Значення змінної playtimes - це масив[1270, 468, 710, 244]
+// Оголошена змінна totalPlayTime
+// Значення змінної totalPlayTime - це число 2692
+// Для перебирання масиву playtimes використовується метод reduce()
+// Оголошена змінна averagePlayTime
+// Значення змінної averagePlayTime - це число 673
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const players = {
+//     mango: 1270,
+//     poly: 468,
+//     ajax: 710,
+//     kiwi: 244
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// // Change code below this line
+// const totalPlayTime = playtimes;
+// // Change code above this line
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// // After
+
+// const players = {
+//     mango: 1270,
+//     poly: 468,
+//     ajax: 710,
+//     kiwi: 244
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+// const totalPlayTime = playtimes.reduce((previousValue, number) => {
+//     return previousValue + number;
+// }, 0);
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-35
+// МЕТОД REDUCE() І МАСИВ ОБ'ЄКТІВ
+// Під час роботи з масивом об'єктів виконується редукування за значенням певної властивості.
+// Наприклад, у нас є масив студентів з балами за тест.
+// Необхідно отримати середній бал.
+
+// const students = [
+//     { name: "Mango", score: 83 },
+//     { name: "Poly", score: 59 },
+//     { name: "Ajax", score: 37 },
+//     { name: "Kiwi", score: 94 },
+//     { name: "Houston", score: 64 },
+// ];
+
+// // Назва акумулятора може бути довільною, це просто параметр функції
+// const totalScore = students.reduce((total, student) => {
+//     return total + student.score;
+// }, 0);
+
+// const averageScore = totalScore / students.length;
+
+// //  --------------------===================== Сonditions =====================--------------------
+// Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця,
+//     і отримати загальну суму цих значень часу.
+//     Розрахувати час для кожного з гравців можна,
+//     розділивши його час(властивість playtime) на кількість ігор(властивість gamesPlayed).
+
+// //  --------------------===================== Tests =====================--------------------
+// Оголошена змінна players
+// Значення змінної players - це масив об'єктів гравців
+// Оголошена змінна totalAveragePlaytimePerGame
+// Значення змінної totalAveragePlaytimePerGame - це число 1023
+// Для перебирання масиву players використовується метод reduce()
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+// const players = [
+//     { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//     { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//     { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//     { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+// // Change code below this line
+// const totalAveragePlaytimePerGame = players.reduce(
+//     (total, player) => (total += player.playtime / player.gamesPlayed),
+//     0
+// );
+
+// // After
+
+// const players = [
+//     { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//     { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//     { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//     { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+// const totalAveragePlaytimePerGame = players.reduce(
+//     (total, player) => (total += player.playtime / player.gamesPlayed),
+//     0
+// );
+
+
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-36
+ЗАДАЧА.ЗАГАЛЬНИЙ БАЛАНС КОРИСТУВАЧІВ
 
 // //  --------------------===================== Сonditions =====================--------------------
 
@@ -1431,5 +2994,20 @@
 
 
 
+
+// ###########################################################################################################################################################
+
+// // ==========================================Task-25
+
+// //  --------------------===================== Сonditions =====================--------------------
+
+// //  --------------------===================== Tests =====================--------------------
+
+// //  --------------------===================== Result =====================--------------------
+
+// // Before
+
+
+// // After
 
 
