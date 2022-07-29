@@ -108,7 +108,7 @@
 
 // console.log(cart); //  [59, 31, 116, 77, 101, 19, 132]
 
-
+const myStr = 'I am a \"double quoted" string inside "double quotes\"."';
 
 
 
