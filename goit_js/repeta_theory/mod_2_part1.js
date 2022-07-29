@@ -103,20 +103,47 @@
 
 
 // for (let value of cart) {
-//     value = Math.round(value * 1.);
+//     value = Math.round(value * 1.1);
 // }
 
 // console.log(cart); //  [59, 31, 116, 77, 101, 19, 132]
 
-const myStr = 'I am a \"double quoted" string inside "double quotes\"."';
+
+
+// ------------------ Задача ------------------ //
+
+/*
+* напиши скрипт который подсчитывает сумму всех чётных чисел в массиве.
+*/
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// // 1 переменная тотал
+// let total = 0;
+// // 2 перебрать массив
+// for (let i = 0; i < numbers.length; i += 1) {
+//     console.log(numbers[i]);
+//     // 3 на каждой итерации проверить элемент на чётность
+//     if (numbers[i] % 2 === 0) {
+//         console.log('Чётное!!!');
+// // 4 если чётное плюсуем к тотал
+// total += numbers[i];
+//     }
+// }
+// console.log('Total: ', total); //
+
+// ------------------ или короче ------------------ //
+
+// for (const number of numbers) {
+//     console.log(number);
+//     if (number % 2 === 0) {
+//         console.log('Чётное!!!');
+//         total += number;
+//     }
+// }
+// console.log('Total: ', total);
 
 
 
-
-
-
-
-
+// ------------------ Задача ------------------ //
 
 
 
