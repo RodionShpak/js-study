@@ -365,12 +365,18 @@
 
 // Должно получиться top-10-benefits-of-react-framework
 
-const title = 'Top 10 benefits of React framework';
-const normalizedTitle = title.toLowerCase();
-// console.log(normalizedTitle); // top 10 benefits of react framework
-const words = normalizedTitle.split(' ');
-// console.log(words); // ['top', '10', 'benefits', 'of', 'react', 'framework']
-const slug = words.join('-');
-// console.log(slug); // top-10-benefits-of-react-framework
+// const title = 'Top 10 benefits of React framework';
+// const normalizedTitle = title.toLowerCase();
+// // console.log(normalizedTitle); // top 10 benefits of react framework
+// const words = normalizedTitle.split(' ');
+// // console.log(words); // ['top', '10', 'benefits', 'of', 'react', 'framework']
+// const slug = words.join('-');
+// // console.log(slug); // top-10-benefits-of-react-framework
 
 
+let str = 'The morning is upon us.';
+// str = str.slice(-3);      // returns 'us.'
+// str = str.slice(-3, -1);  // returns 'us'
+str = str.slice(0, -1);   // returns 'The morning is upon us'
+
+console.log(str);
