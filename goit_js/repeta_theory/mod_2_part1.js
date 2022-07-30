@@ -130,7 +130,7 @@
 // }
 // console.log('Total: ', total); //
 
-// ------------------ или короче ------------------ //
+// ------------------ или через for of ------------------ //
 
 // for (const number of numbers) {
 //     console.log(number);
