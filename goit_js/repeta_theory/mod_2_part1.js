@@ -353,7 +353,7 @@
 
 
 
-// ------------------ Задача  ------------------ //
+// ------------------ Задача ------------------ //
 /*
 * Делаем slug в URL из названия статьи (например на dev.to)
 * Заголовок статьи состоит только из букв и пробелов
@@ -366,10 +366,93 @@
 // Должно получиться top-10-benefits-of-react-framework
 
 // const title = 'Top 10 benefits of React framework';
-// const normalizedTitle = title.toLowerCase();
-// // console.log(normalizedTitle); // top 10 benefits of react framework
-// const words = normalizedTitle.split(' ');
-// // console.log(words); // ['top', '10', 'benefits', 'of', 'react', 'framework']
-// const slug = words.join('-');
-// // console.log(slug); // top-10-benefits-of-react-framework
 
+// const normalizedTitle = title.toLowerCase();
+// console.log(normalizedTitle); // top 10 benefits of react framework
+
+// const words = normalizedTitle.split(' ');
+// console.log(words); // ['top', '10', 'benefits', 'of', 'react', 'framework']
+
+// const slug = words.join('-');
+// console.log(slug); // top-10-benefits-of-react-framework
+
+// const slug1 = title.toLowerCase().split(' ').join('-');
+
+// console.log(slug1); // top-10-benefits-of-react-framework
+
+
+
+// ------------------ Задача ------------------ //
+/*
+* Напиши скрипт который считает сумму элементов двух массивов.
+*/
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+
+// //** с помощью метода concat склеиваем два массива **//
+// const numbers = array1.concat(array2);
+// console.log(numbers); // [5, 10, 15, 20, 10, 20, 30]
+
+// //** перебираем массив и плюсуем **//
+
+// for (const number of numbers) {
+//     total += number;
+// }
+// console.log(total); // 110
+
+
+
+// ------------------ Задача на метод  splice() ------------------ //
+/*
+* работаем с коллекцией карточек в trello
+* - Метод splice()
+* - Удалить
+* - Добавить
+* - Обновить
+*/
+
+// const cards = [
+//     'Карточка-1',
+//     'Карточка-2',
+//     'Карточка-3',
+//     'Карточка-4',
+//     'Карточка-5',
+// ];
+
+// console.table(cards);
+
+/*
+* Удаление (по индексу), метод indexOf()
+* позволяет найти индекс єлемента в массиве
+*/
+
+// const cardToRemove = 'Карточка-3';
+// const index = cards.indexOf(cardToRemove);
+// console.table(index); // 2
+
+// cards.splice(index, 1); // удаляем одни єлемент под индексом 3
+// console.table(cards);
+
+/*
+* Добавление (по индексу)
+*/
+
+// const cardToInsert = 'Карточка-6';
+// const index = 3;
+
+// // cards.splice(1, 0, 5, 10, 20);
+// // где 1-с какого индекса, где 0- ничего не удаляем,
+// // остальное символы что нужно вставить
+
+// cards.splice(index, 0, cardToInsert); // вставили на 3-ее место 'Карточка-6'
+// console.table(cards); // добавляет в массив новЫе символы
+
+/*
+* Обновление (по индексу)
+*/
+
+// const cardToUpdate = 'Карточка-4';
+// cards.splice(1, 1, 555); // на 1-ый индекс вставили 555
+// console.table(cards); 
