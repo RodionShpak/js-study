@@ -74,7 +74,7 @@
 
 
 
-// ------------------ Задача ------------------ //
+// ------------------ Задача calculateTotalPrice(items) сумма чисел в массиве------------------ //
 /*
 * Напиши функцию calculateTotalPrice(items)
 * которая принимает массив цен (чисел) и возвращает их сумму
@@ -107,7 +107,7 @@
 
 
 
-// ------------------ Задача ------------------ //
+// ------------------ Задача logItems(items) перебор массива ------------------ //
 /*
 * Напиши функцию logItems(items) для перебора и логирования массива
 */
@@ -124,7 +124,7 @@
 
 
 
-// ------------------ Задача ------------------ //
+// ------------------ Задача findLogin(allLogins, login) поиск логина------------------ //
 /*
 * напиши функцию findLogin(allLogins, login) для поиска логина
 * Если логина нет, Вывести сообщение "Пользователь [логин] не найден."
@@ -195,26 +195,198 @@
 
 
 
-// ------------------ Задача ------------------ //
+// ------------------ Задача findSmallesNumber(numbers) поиск маленького числа в массиве ------------------ //
 /*
 * Напиши функцию findSmallesNumber(numbers) для поиска самого маленького числа в массиве,
 * при условии что числа уникальные (не повторяются).
 */
 
-const numbers = [51, 18, 13, 24, 7, 85, 19];
-let smallestNumber = numbers[0];
+// // const numbers = [51, 18, 13, 24, 7, 85, 19];
+// const findSmallesNumber = function (numbers) {
+//     let smallestNumber = numbers[0];
 
-for (const number of numbers) {
-    if (number < smallestNumber) {
-        smallestNumber = number;
+//     for (const number of numbers) {
+//         if (number < smallestNumber) {
+//             smallestNumber = number;
+//         }
+//     }
+//     return smallestNumber;
+// };
+
+// // console.log('smallestNumber: ', smallestNumber);
+
+// console.log(findSmallesNumber([3, 8, 12, -2, 15])); // -2
+// console.log(findSmallesNumber([100, 54, 8, 12, 47])); // 8
+// console.log(findSmallesNumber([7, 21, 84, 15, 4])); // 4
+
+
+
+// ------------------ Задача changeCase(string) замена регистра в строке ------------------ //
+
+/*
+ * Напиши функцию changeCase(string) которая заменяет регистр
+ * каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const changeCase = function (string) {
+//     const letters = string.split('');
+//     // console.log(letters);
+//     // ['q', 'w', 'e', 'R', 'T', 'Y']
+//     // ['m', 'A', 'n', 'G', 'o']
+//     // ['A', 'j', 'A', 'x']
+
+//     let invertedString = '';
+
+//     for (const letter of letters) {
+//         const isInLowerCase = letter === letter.toLowerCase();
+
+//         invertedString += isInLowerCase
+//             ? letter.toUpperCase()
+//             : letter.toLowerCase();
+//     }
+
+//     return invertedString;
+// };
+
+// console.log(changeCase('qweRTY')); // QWErty
+// console.log(changeCase('mAnGo')); // MaNgO
+// console.log(changeCase('AjAx')); // aJaX
+
+
+
+// ------------------ Задача slugify(string) получаем строку и возвращаем её же только с символом "-" ------------------ //
+/*
+ * Напиши функцию slugify(string) которая получает строку и возвращает URL-slug
+ * Строка состоит только из букв и пробелов
+ */
+
+// const slugify = function (string) {
+// const normalizedString = string.toLowerCase();
+// const words = normalizedString.split(' ');
+// const slug = words.join('-');
+
+// return slug;
+// };
+
+// const slugify = function (string) {
+//     // const normalizedString = string.toLowerCase();
+//     // const words = normalizedString.split(' ');
+//     // const slug = words.join('-');
+
+//     // return slug;
+
+//     return string.toLowerCase().split(' ').join('-');
+// };
+
+
+// console.log(slugify('Top 10 benefits of React framework'));
+// console.log(slugify('Azure Static Web Apps are Awesome'));
+// console.log(slugify('Technical writing tips for non-native English speakers'));
+
+
+
+// ------------------ Задача arguments и Array.from и ------------------ //
+/*
+ * Псевдомассив arguments и Array.from и ...
+ */
+
+//********* Metod 1 через Array.from *********//
+
+// const fn = function () {
+//     console.log(arguments);
+
+//     const args = Array.from(arguments);
+
+//     console.log(args);
+
+//     // for (const arg of arguments) {
+//     //     console.log(arg);
+//     // }
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5,);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+//********* Metod 2 через ...(rest) *********//
+
+// const fn = function (...args) {
+//     console.log(args);
+// };
+
+// fn(1, 2, 3);
+// fn(1, 2, 3, 4, 5,);
+// fn(1, 2, 3, 4, 5, 6, 7);
+
+//********* Metod 3 через  *********//
+
+// const fn = function (a, b, c, ...args) {
+//     console.log(`${a} ${b} ${c}`);
+//     // hello 1 2
+//     // aloha 1 2
+//     // hi 1 2
+
+//     console.log(args);
+//     // [3]
+//     // [3, 4, 5]
+//     // [3, 4, 5, 6, 7]
+// };
+
+// fn('hello', 1, 2, 3);
+// fn('aloha', 1, 2, 3, 4, 5,);
+// fn('hi', 1, 2, 3, 4, 5, 6, 7);
+
+
+
+// ------------------ Задача на ... rest ------------------ //
+/*
+ * Напиши функцию add для сложения произвольного количества аргументов (чисел)
+ * - Операция ... (rest)
+ */
+
+// const add = function (...args) {
+//     console.log(args);
+//     let total = 0;
+
+//     for (const arg of args) {
+//         total += args;
+//     }
+//     return total;
+
+// };
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 4, 5, 6));
+
+
+
+// ------------------ Задача на возврат нового массива с новыми значениями ------------------ //
+
+/*
+ * Напиши функцию filterNumbers(array [, number1, ...]) которая:
+ * - первым аргументом принимает массив чисел
+ * - после первого аргумента может быть произвольное количество других аргументов которые будут числами.
+ * - Функция должна вернуть новый массив, в котором будут только те аргументы, начиная со второго,
+ *   для которых есть аналог в оригинальном массиве.
+//  */
+
+const filterNumbers = function (array, ...args) {
+    console.log('array: ', array);
+    console.log('args: ', args);
+    const uniqueElements = [];
+
+    for (const element of array) {
+        if (args.includes(element)) {
+            uniqueElements.push(element);
+
+            console.log(`${element} есть везде!`);
+        }
     }
-}
 
-console.log('smallestNumber: ', smallestNumber);
+    return uniqueElements;
+};
 
-
-
-console.log(findSmallesNumber([3, 8, 12, -2, 15])); // -2
-console.log(findSmallesNumber([100, 54, 8, 12, 47])); // 8
-console.log(findSmallesNumber([7, 21, 84, 15, 4])); // 4
-
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8)); // [2, 3]
+console.log(filterNumbers([10, 15, 25, 30], 23, 30, 18, 15)); // [30, 15]
+console.log(filterNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64)); // [200]
