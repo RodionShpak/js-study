@@ -89,37 +89,107 @@
 
 // console.log('Total: ', total); // Total: 613
 
-const calculateTotalPrice = function (items) {
-    console.log(items);
+// const calculateTotalPrice = function (items) {
+//     console.log(items);
 
-    let total = 0;
+//     let total = 0;
 
-    for (const item of items) {
-        total += item;
-    }
+//     for (const item of items) {
+//         total += item;
+//     }
 
-    return total;
-}
+//     return total;
+// };
 
-console.log(calculateTotalPrice([1, 2, 3])); // 6
-console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
-console.log(calculateTotalPrice([100, 200, 300])); // 600
-
-
+// console.log(calculateTotalPrice([1, 2, 3])); // 6
+// console.log(calculateTotalPrice([5, 10, 15, 20])); // 50
+// console.log(calculateTotalPrice([100, 200, 300])); // 600
 
 
 
+// ------------------ Задача ------------------ //
+/*
+* Напиши функцию logItems(items) для перебора и логирования массива
+*/
+
+// const logItems = function (items) {
+//     for (const item of items) {
+//         console.log(item);
+//     }
+// };
+
+// logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+// logItems([1, 2, 3, 4, 5]);
+// logItems(['клавиатура', 'наушники', 'часы']);
 
 
 
+// ------------------ Задача ------------------ //
+/*
+* напиши функцию findLogin(allLogins, login) для поиска логина
+* Если логина нет, Вывести сообщение "Пользователь [логин] не найден."
+* Если нашли логни, вывести сообщение "Пользователь [логин] найден."
+*/
 
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'aj4xth3m4n';
 
+// const message = logins.includes(loginToFind)
+//     ? `Пользователь ${loginToFind} найден.`
+//     : `Пользователь ${loginToFind} не найден.`;
 
+// console.log(message); // Пользователь aj4xth3m4n найден.`
 
+//***/ напиши функцию findLogin(allLogins, login) для поиска логина/***/
 
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
+// const findLogin = function (allLogins, loginToFind) {
+//     let message = `Пользователь ${loginToFind} не найден.`;
 
+//     for (const login of allLogins) {
+//         if (login === loginToFind) {
+//             message = `Пользователь ${loginToFind} найден.`;
+//         }
+//     }
+//     return message;
+// };
 
+// console.log(findLogin(logins, 'avocod3r'));
+// console.log(findLogin(logins, 'k1widab3st'));
+// console.log(findLogin(logins, 'jam4l'));
+// console.log(findLogin(logins, 'poly1scute'));
 
+//***/ модифицируем функию /***/
 
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+
+// const findLogin = function (allLogins, loginToFind) {
+//     for (const login of allLogins) {
+//         if (login === loginToFind) {
+//             return `Пользователь ${loginToFind} найден.`;
+//         }
+//     }
+//     return `Пользователь ${loginToFind} не найден.`;
+// };
+
+// console.log(findLogin(logins, 'avocod3r'));
+// console.log(findLogin(logins, 'k1widab3st'));
+// console.log(findLogin(logins, 'jam4l'));
+// console.log(findLogin(logins, 'poly1scute'));
+
+//***/ модифицируем с помощью тернарника /***/
+
+const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+
+const findLogin = function (allLogins, loginToFind) {
+    return allLogins.includes(loginToFind)
+        ? `Пользователь ${loginToFind} найден.`
+        : `Пользователь ${loginToFind} не найден.`;
+};
+
+console.log(findLogin(logins, 'avocod3r'));
+console.log(findLogin(logins, 'k1widab3st'));
+console.log(findLogin(logins, 'jam4l'));
+console.log(findLogin(logins, 'poly1scute'));
 
