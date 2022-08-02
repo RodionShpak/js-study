@@ -180,16 +180,16 @@
 
 //***/ модифицируем с помощью тернарника /***/
 
-const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
-const findLogin = function (allLogins, loginToFind) {
-    return allLogins.includes(loginToFind)
-        ? `Пользователь ${loginToFind} найден.`
-        : `Пользователь ${loginToFind} не найден.`;
-};
+// const findLogin = function (allLogins, loginToFind) {
+//     return allLogins.includes(loginToFind)
+//         ? `Пользователь ${loginToFind} найден.`
+//         : `Пользователь ${loginToFind} не найден.`;
+// };
 
-console.log(findLogin(logins, 'avocod3r'));
-console.log(findLogin(logins, 'k1widab3st'));
-console.log(findLogin(logins, 'jam4l'));
-console.log(findLogin(logins, 'poly1scute'));
+// console.log(findLogin(logins, 'avocod3r'));
+// console.log(findLogin(logins, 'k1widab3st'));
+// console.log(findLogin(logins, 'jam4l'));
+// console.log(findLogin(logins, 'poly1scute'));
 
