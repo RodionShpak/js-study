@@ -193,3 +193,8 @@
 // console.log(findLogin(logins, 'jam4l'));
 // console.log(findLogin(logins, 'poly1scute'));
 
+
+
+// ------------------ Задача ------------------ //
+
+
