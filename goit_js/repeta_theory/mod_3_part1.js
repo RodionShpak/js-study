@@ -36,149 +36,91 @@
 //     * - Отсутствующие свойства
 */
 
-const playlist = {
-    name: 'Мой супер плейлист',
-    rating: 5,
-    tracks: ['трек-1', 'трек-2', 'трек-3'],
-    trackCount: 3,
-};
-
-//****** ключ свойства всегда строка ******//
-console.log(playlist.name); // получаем доступ через ключ к значению
-console.log(playlist.tracks);  // ['трек-1', 'трек-2', 'трек-3']
-console.log(playlist.trackCount);  // 3
-
-////****** имя свойства хранится в переменной ******////
-
-const propertyName = 'tracks';
-
-// console.log(playlist.propertyName);  // undefined
-
-//****** как достучаться до свойства ******//
-// console.log(playlist.rating);  // 5
-// console.log(playlist['rating']);  // 5
-
-console.log(playlist.propertyName); // undefined
-console.log(playlist[propertyName]); // ['трек-1', 'трек-2', 'трек-3']
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // const playlist = {
-// //   name: 'Мой супер плейлист',
-// //   rating: 5,
-// //   tracks: ['трек-1', 'трек-2', 'трек-3'],
-// //   trackCount: 3,
-// // };
-
-// // console.log(playlist);
-
-// // const x = {};
-
-// // const fn = function (myObject) {
-// //   // myObject = { a: 1, b: 2 }
-// //   console.log(myObject);
-// // };
-
-// // fn({ a: 1, b: 2 });
-
-// // const rtfm = function () {
-// //   return { a: 5 };
-// // };
-
-// // console.log(rtfm());
-
-// /*
-
-
 // const playlist = {
 //     name: 'Мой супер плейлист',
 //     rating: 5,
 //     tracks: ['трек-1', 'трек-2', 'трек-3'],
 //     trackCount: 3,
-// };
 
-// // playlist.qwe = 5;
+// playlist.qwe = 5; // добавляем новое свойсвто в уже существующий 
+// массив если такое свойство уже сть оно перезаписывается
 
-// // playlist.rating = 10;
 
-// // console.log(playlist);
+//****** ключ свойства всегда строка ******//
 
-// // console.log(playlist);
-// // console.log(playlist.tracks);
-// // console.log(playlist.name);
-// // console.log(playlist.trackCount);
+// console.log(playlist);
+// console.log(playlist.name); // получаем доступ через ключ к значению
+// console.log(playlist.tracks);  // ['трек-1', 'трек-2', 'трек-3']
+// console.log(playlist.trackCount);  // 3
+
+////****** имя свойства хранится в переменной ******////
 
 // const propertyName = 'tracks';
 
-// // console.log(playlist.rating);
-// // console.log(playlist['rating']);
+// console.log(playlist.propertyName);  // undefined
 
-// // console.log(playlist.propertyName);
-// // console.log(playlist[propertyName]);
+//****** как достучаться до свойства ******//
+
+// console.log(playlist.rating);  // 5
+// console.log(playlist['rating']);  // 5
+
+// console.log(playlist.propertyName); // undefined
+// console.log(playlist[propertyName]); // ['трек-1', 'трек-2', 'трек-3']
 
 // /*
 //  * Короткая запись свойств
 //  */
+
 // const username = 'Mango';
 // const email = 'mango@mail.com';
 
 // const signupData = {
-//     username,
-//     email,
+//     // username: username,
+//     username,  // запись покороче если имя ключа совпадает с именем переменной
+//     // email: email,
+//     email,  // запись покороче если имя ключа совпадает с именем переменной
 // };
 
-// // console.log(signupData);
+// console.log(signupData);
 
 // /*
 //  * Вычисляемые свойства
 //  */
 
-// //  <input name="color" value="tomato" >
+// <input name="color" value="tomato">
 
 // const inputName = 'color';
 // const inputValue = 'tomato';
 
 // const colorPickerData = {
-//     [inputName]: inputValue,
+//     // [inputName]: 5  // подставляем значение 5 в имя переменной
+//     [inputName]: inputValue,  // подставляем значение inputValue в имя переменной
 // };
 
-// // console.log(colorPickerData);
+// console.log(colorPickerData); // color: 5
+// console.log(colorPickerData); // color: tomato
 
 // /*
 //  * Ссылочный тип {} === {}
 //  */
 
-// // console.log({ a: 1 } === { a: 1 });
-// // console.log([] === []);
+const a = { x: 1, y: 2 };
+const b = a;
 
-// // const a = { x: 1, y: 2 };
-// // const b = a;
+console.log(b === a);
 
-// // console.log(b === a);
+a.c = 100;
 
-// // a.hello = 100;
-// // b.hello = 150;
+// b.c = 100;
 
-// // console.log(a);
-// // console.log(b);
+console.log(a); // { x: 1, y: 2, c: 100 }
+console.log(b); // { x: 1, y: 2, c: 100 }
+
+
+
+
+
+
 
 // /*
 //  * Массивы и функции это объекты
