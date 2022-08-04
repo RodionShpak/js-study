@@ -235,38 +235,204 @@
  * Перебор через for...in и Object.keys|values|entries
  */
 
-const feedback = {
-    good: 5,
-    neutral: 10,
-    bad: 3,
-};
+// const feedback = {
+//     good: 5,
+//     neutral: 10,
+//     bad: 3,
+// };
 
-let totalFeedback = 0;
+// let totalFeedback = 0;
 
-// const keys = Object.keys(feedback);
+// const keys = Object.keys(feedback); // получаем массив ключей из обьекта feedback
+// console.log(keys); // ['good', 'neutral', 'bad']
 
-// console.log(keys);
-
-// for (const key of keys) {
-//   console.log(key);
-//   console.log(feedback[key]);
-
-//   totalFeedback += feedback[key];
+// for (const key of keys) { // перебираем массив
+//     console.log(key); // good neutral bad
 // }
 
-// console.log('totalFeedback: ', totalFeedback);
+// for (const key of keys) { // перебираем массив
+//     console.log(key); // good neutral bad
+//     console.log(feedback[key]); // получаем значение объекта по ключу
+//     ///// good
+//     ///// 5
+//     ///// neutral
+//     ///// 10
+//     ///// bad
+//     ///// 3
+//     totalFeedback += feedback[key];
+// }
 
-const values = Object.values(feedback);
+// console.log('totalFeedback: ', totalFeedback);  // totalFeedback:  18
 
-// console.log(values);
+///********** вместо Object.keys (возврат массива ключей) ипсользуем Object.values (возврат массива значений) *********///*
+
+// const values = Object.values(feedback); // возвращает массив значений
+
+// console.log(values); // [5, 10, 3]
 
 // for (const value of values) {
-//   console.log(value);
+//     console.log(value);
+//     ///// 5
+//     ///// 10
+//     ///// 3
 
-//   totalFeedback += value;
+//     totalFeedback += value;
 // }
 
-// console.log('totalFeedback: ', totalFeedback);
+// console.log('totalFeedback: ', totalFeedback); //  totalFeedback: 18
+
+
+
+// ------------------ работа с коллекцией (массив обьектов) ------------------ //
+
+/*
+ * Работа с коллекцией (массивом объектов)
+ */
+
+const friends = [
+    { name: 'Mango', online: false },
+    { name: 'Kiwi', online: true },
+    { name: 'Poly', online: false },
+    { name: 'Ajax', online: false },
+];
+
+console.table(friends);
+
+///// перебираем массив /////
+for (const friend of friends) {
+    console.log(friend);
+
+    ///// ccылка на оригинальный обьект и добавл. 
+    ///// к каждому обьекту свойство 555
+    friend.newprop = 555;
+}
+
+console.table(friends);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Ищем друга по имени
+ */
+
+// const findFriendByName = function (allFriends, friendName) {
+//     for (const friend of allFriends) {
+//         // console.log(friend);
+//         // console.log(friend.name);
+
+//         if (friend.name === friendName) {
+//             return 'НАШЛИ!!!';
+//         }
+//     }
+
+//     return 'НЕ НАШЛИ :(';
+// };
+
+// // console.log(findFriendByName(friends, 'Poly'));
+// // console.log(findFriendByName(friends, 'Chelsy'));
+
+// /*
+//  * Получаем имена всех друзей
+//  */
+
+// const getAllNames = function (allFriends) {
+//     const names = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend.name);
+
+//         names.push(friend.name);
+//     }
+
+//     return names;
+// };
+
+// // console.log(getAllNames(friends));
+
+// /*
+//  * Получаем имена только друзей которые онлайн
+//  */
+// const getOnlineFriends = function (allFriends) {
+//     const onlineFriends = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend);
+//         console.log(friend.online);
+
+//         if (friend.online) {
+//             onlineFriends.push(friend);
+//         }
+//     }
+
+//     return onlineFriends;
+// };
+
+// // console.log(getOnlineFriends(friends));
+
+// const getOfflineFriends = function (allFriends) {
+//     const offlineFriends = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend.online);
+
+//         if (!friend.online) {
+//             offlineFriends.push(friend);
+//         }
+//     }
+
+//     return offlineFriends;
+// };
+
+// // console.log(getOfflineFriends(friends));
+
+// // создать 2 массива онлайн и офлайн?
+// // если тру - в первый, если нет - во второй
+
+// const getFriendsByStatus = function (allFriends) {
+//     const friendsByStatus = {
+//         online: [],
+//         offline: [],
+//     };
+
+//     for (const friend of allFriends) {
+//         if (friend.online) {
+//             friendsByStatus.online.push(friend);
+//             continue;
+//         }
+
+//         friendsByStatus.offline.push(friend);
+
+//         // const key = friend.online ? 'online' : 'offline';
+//         // friendsByStatus[key].push(friend);
+//     }
+
+//     return friendsByStatus;
+// };
+
+// console.log(getFriendsByStatus(friends));
+
+
+
+
+
 
 
 
