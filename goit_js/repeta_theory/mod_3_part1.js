@@ -298,42 +298,39 @@ const friends = [
 
 console.table(friends);
 
-///// перебираем массив /////
-for (const friend of friends) {
-    console.log(friend);
+// ///// перебираем массив /////
+// for (const friend of friends) {
+//     console.log(friend);
 
-    ///// ccылка на оригинальный обьект и добавл. 
-    ///// к каждому обьекту свойство 555
-    friend.newprop = 555;
-}
+//     ///// ccылка на оригинальный обьект и добавл.
+//     ///// к каждому обьекту свойство 555
+//     friend.newprop = 555;
+// }
 
-console.table(friends);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.table(friends);
 
 /*
  * Ищем друга по имени
  */
 
-// const findFriendByName = function (allFriends, friendName) {
+const findFriendByName = function (allFriends, name) {
+
+};
+
+console.log(findFriendByName(friends, 'Poly'));
+console.log(findFriendByName(friends, 'Chelsy'));
+
+
+
+
+
+
+
+
+
+
+
+
 //     for (const friend of allFriends) {
 //         // console.log(friend);
 //         // console.log(friend.name);
@@ -348,6 +345,16 @@ console.table(friends);
 
 // // console.log(findFriendByName(friends, 'Poly'));
 // // console.log(findFriendByName(friends, 'Chelsy'));
+
+
+
+
+
+
+
+
+
+
 
 // /*
 //  * Получаем имена всех друзей
