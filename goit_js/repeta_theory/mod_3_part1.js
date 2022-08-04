@@ -313,8 +313,16 @@ console.table(friends);
  * Ищем друга по имени
  */
 
-const findFriendByName = function (allFriends, name) {
+const findFriendByName = function (allFriends, friendName) {
+    for (const friend of allFriends) {
+        console.log(friend);
+        // console.log(friend.name === name);
 
+        if (friend.name === friendName) {
+            return 'Нашли!';
+        }
+    }
+    return 'Не нашли! :(';
 };
 
 console.log(findFriendByName(friends, 'Poly'));
