@@ -42,7 +42,7 @@
 //     tracks: ['трек-1', 'трек-2', 'трек-3'],
 //     trackCount: 3,
 
-// playlist.qwe = 5; // добавляем новое свойсвто в уже существующий 
+// playlist.qwe = 5; // добавляем новое свойсвто в уже существующий
 // массив если такое свойство уже сть оно перезаписывается
 
 
@@ -104,42 +104,186 @@
 //  * Ссылочный тип {} === {}
 //  */
 
-const a = { x: 1, y: 2 };
-const b = a;
+// console.log({ a: 1, y: 2 });
+// console.log([] === []);
 
-console.log(b === a);
+// const a = { x: 1, y: 2 };
+// const b = a;
 
-a.c = 100;
+// console.log(b === a);
 
-// b.c = 100;
+// a.hello = 100;
+// b.hello = 150;
 
-console.log(a); // { x: 1, y: 2, c: 100 }
-console.log(b); // { x: 1, y: 2, c: 100 }
-
-
-
-
-
+// console.log(a); // { x: 1, y: 2, c: 100 }
+// console.log(b); // { x: 1, y: 2, c: 100 }
 
 
 // /*
 //  * Массивы и функции это объекты
 //  */
 
-// // const a = [1, 2, 3];
+// const a = [1, 2, 3];
 
-// // a.hello = ':)';
+// a.hello = ':)';
 
-// // console.log(a);
+// console.log(a); // [1, 2, 3, hello: ':)']
 
-// // const fn = function () {
-// //   console.log('hello');
-// // };
+// const fn = function () {
+//     console.log('hello');
+// };
 
-// // fn.hello = ';)';
+// fn.hello = ':)';
 
-// // console.dir(fn.hello);
+// console.dir(fn.hello);  // :)
+
+// const a = [1, 2, 3];
+
+// a.push(4);
+
+// console.log(a); // [1, 2, 3, 4]
 
 
 
-// ------------------  ------------------ //
+// ------------------ Методы объекта и this при обращении к свойствам в методах ------------------ //
+/*
+ * http://fecore.net.ua/books/m5ph3r-javascript/module-03/images/context.jpg
+ *
+ * - changeName
+ * - addTrack
+ * - updateRating
+ * - getTrackCount
+ */
+
+///********** old school *********///*
+
+// const playlist = {
+//     name: 'Мой супер плейлист',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+//     getName: function () {     /// метод
+//         console.log('Ага это getName :)');
+//     },
+// };
+
+// // console.log(playlist);
+
+// playlist.getName(5); // Ага это getName:)
+
+///********** new school *********///*
+
+// const playlist = {
+//     name: 'Мой супер плейлист',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+//     getName() {
+//         console.log('Ага это getName :)'); // Ага это getName :)
+//     },
+// };
+
+// // console.log(playlist);
+
+///********** изменяем имя свойства обьекта *********///*
+
+// const playlist = {
+//     name: 'Мой супер плейлист',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+//     chageName(newName) {
+//         console.log('this внутри changeName: ', this);
+
+//         this.name = newName; // меняем имя с 'Мой супер плейлист' на 'Новое имя'
+//     },
+//     addTrack(track) {
+//         this.tracks.push(track); // добавляем новый трек
+//         // this.trackCount = this.tracks.length; // меняем trackCount
+//     },
+//     updateRating(newRating) {
+//         this.rating = newRating; // изменяем рейтинг
+//     },
+//     getTrackCount() {
+//         return this.tracks.length; // возвращает текущую длину массива
+//     },
+// };
+
+// playlist.chageName('Новое имя');
+// console.log(playlist);
+
+// // this внутри changeName:  {name: 'Мой супер плейлист', rating: 5, tracks: Array(3), trackCount: 3, chageName: ƒ}
+// // { name: 'Новое имя', rating: 5, tracks: Array(3), trackCount: 3, chageName: ƒ }
+
+// playlist.addTrack('Новый трек');
+// console.log(playlist);
+
+// // {name: 'Новое имя', rating: 5, tracks: Array(3), trackCount: 3, chageName: ƒ, …}
+// // { name: 'Новое имя', rating: 5, tracks: Array(4), trackCount: 3, chageName: ƒ, … }
+
+// playlist.updateRating(4);
+// console.log(playlist);
+
+// // { name: 'Новое имя', rating: 5, tracks: Array(4), trackCount: 3, chageName: ƒ, … }
+// // { name: 'Новое имя', rating: 4, tracks: Array(4), trackCount: 3, chageName: ƒ, … }
+
+
+
+// ------------------ Перебор через for...in и Object.keys|values|entries ------------------ //
+
+/*
+ * Перебор через for...in и Object.keys|values|entries
+ */
+
+const feedback = {
+    good: 5,
+    neutral: 10,
+    bad: 3,
+};
+
+let totalFeedback = 0;
+
+// const keys = Object.keys(feedback);
+
+// console.log(keys);
+
+// for (const key of keys) {
+//   console.log(key);
+//   console.log(feedback[key]);
+
+//   totalFeedback += feedback[key];
+// }
+
+// console.log('totalFeedback: ', totalFeedback);
+
+const values = Object.values(feedback);
+
+// console.log(values);
+
+// for (const value of values) {
+//   console.log(value);
+
+//   totalFeedback += value;
+// }
+
+// console.log('totalFeedback: ', totalFeedback);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
