@@ -289,14 +289,14 @@
  * Работа с коллекцией (массивом объектов)
  */
 
-const friends = [
-    { name: 'Mango', online: false },
-    { name: 'Kiwi', online: true },
-    { name: 'Poly', online: false },
-    { name: 'Ajax', online: false },
-];
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: false },
+// ];
 
-console.table(friends);
+// console.table(friends);
 
 // ///// перебираем массив /////
 // for (const friend of friends) {
@@ -309,82 +309,78 @@ console.table(friends);
 
 // console.table(friends);
 
+
 /*
  * Ищем друга по имени
  */
 
-const findFriendByName = function (allFriends, friendName) {
-    for (const friend of allFriends) {
-        console.log(friend);
-        // console.log(friend.name === name);
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: false },
+// ];
 
-        if (friend.name === friendName) {
-            return 'Нашли!';
-        }
-    }
-    return 'Не нашли! :(';
-};
+// console.table(friends);
 
-console.log(findFriendByName(friends, 'Poly'));
-console.log(findFriendByName(friends, 'Chelsy'));
-
-
-
-
-
-
-
-
-
-
-
-
+// const findFriendByName = function (allFriends, friendName) {
 //     for (const friend of allFriends) {
 //         // console.log(friend);
-//         // console.log(friend.name);
+//         // console.log(friend.name === name);
 
 //         if (friend.name === friendName) {
-//             return 'НАШЛИ!!!';
+//             return 'Нашли!';
 //         }
 //     }
-
-//     return 'НЕ НАШЛИ :(';
+//     return 'Не нашли! :(';
 // };
 
-// // console.log(findFriendByName(friends, 'Poly'));
-// // console.log(findFriendByName(friends, 'Chelsy'));
-
-
-
-
-
-
-
-
-
+// console.log(findFriendByName(friends, 'Poly'));
+// console.log(findFriendByName(friends, 'Chelsy'));
 
 
 // /*
 //  * Получаем имена всех друзей
 //  */
 
-// const getAllNames = function (allFriends) {
-//     const names = [];
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: false },
+// ];
 
-//     for (const friend of allFriends) {
+// console.table(friends);
+
+// const getAllNames = function (allFriends) {
+//     const names = []; // создаем пустой массив
+
+//     for (const friend of friends) { // перебираем массив
 //         console.log(friend.name);
 
-//         names.push(friend.name);
+//         names.push(friend.name); // пушим каждое имя в пустой массив
 //     }
+//     // console.log(names); // получаем массив имён
 
-//     return names;
+//     return names; // возвращаем уже созданый новый массив ['Mango', 'Kiwi', 'Poly', 'Ajax']
 // };
 
-// // console.log(getAllNames(friends));
+// console.log(getAllNames(friends));
+
 
 // /*
 //  * Получаем имена только друзей которые онлайн
 //  */
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: true },
+// ];
+
+// console.table(friends);
+
 // const getOnlineFriends = function (allFriends) {
 //     const onlineFriends = [];
 
@@ -397,10 +393,26 @@ console.log(findFriendByName(friends, 'Chelsy'));
 //         }
 //     }
 
-//     return onlineFriends;
+//     return onlineFriends; //
 // };
 
-// // console.log(getOnlineFriends(friends));
+// console.log(getOnlineFriends(friends));
+// {name: 'Kiwi', online: true}
+// {name: 'Ajax', online: true}
+
+
+// /*
+//  * Получаем имена только друзей которые офлайн
+//  */
+
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: true },
+// ];
+
+// console.table(friends);
 
 // const getOfflineFriends = function (allFriends) {
 //     const offlineFriends = [];
@@ -415,39 +427,119 @@ console.log(findFriendByName(friends, 'Chelsy'));
 
 //     return offlineFriends;
 // };
+// console.log(getOfflineFriends(friends));
+// //  {name: 'Mango', online: false}
+// //  {name: 'Poly', online: false}
 
-// // console.log(getOfflineFriends(friends));
 
+/*
 // // создать 2 массива онлайн и офлайн?
 // // если тру - в первый, если нет - во второй
+*/
 
-// const getFriendsByStatus = function (allFriends) {
+// const friends = [
+//     { name: 'Mango', online: false },
+//     { name: 'Kiwi', online: true },
+//     { name: 'Poly', online: false },
+//     { name: 'Ajax', online: true },
+// ];
+
+// const getFriendsByOnlineStatus = function (allFriends) {
 //     const friendsByStatus = {
 //         online: [],
 //         offline: [],
 //     };
+//     // for (const friend of allFriends) {
+//     //     if (friend.online) {
+//     //         friendsByStatus.online.push(friend);
+//     //     } else {
+//     //         friendsByStatus.offline.push(friend);
+//     //     }
+//     // }
+
+//     //// или можно и так ////
 
 //     for (const friend of allFriends) {
 //         if (friend.online) {
 //             friendsByStatus.online.push(friend);
 //             continue;
 //         }
-
 //         friendsByStatus.offline.push(friend);
-
-//         // const key = friend.online ? 'online' : 'offline';
-//         // friendsByStatus[key].push(friend);
 //     }
 
 //     return friendsByStatus;
 // };
 
-// console.log(getFriendsByStatus(friends));
+// console.log(getFriendsByOnlineStatus(friends));
+// // {name: 'Mango', online: false} - offline
+// // {name: 'Poly', online: false} - offline
+// // {name: 'Kiwi', online: true} - online
+// // {name: 'Ajax', online: true} - online
+
+//// как узнать колличество свойств в этом объекте? ////
+
+// const x = {
+//     a: 1,
+//     b: 2,
+//     c: 50,
+//     d: 100
+// };
+
+// console.log(Object.keys(x).length); // 4
 
 
 
+/*
+ * Работем с коллекцией товаров в корзине:
+ * - getItems()
+ * - add(product)
+ * - remove(productName)
+ * - clear()
+ * - countTotalPrice()
+ * - increaseQuantity(productName)
+ * - decreaseQuantity(productName)
+ *
+ * { name: '🍎', price: 50 }
+ * { name: '🍇', price: 70 }
+ * { name: '🍋', price: 60 }
+ * { name: '🍓', price: 110 }
+ */
 
 
+const cart = {
+    items: [],
+    getItems() { },
+    add(product) { },
+    remove(productName) { },
+    clear() { },
+    countTotalPrice() { },
+    increaseQuantity(productName) { },
+    decreaseQuantity(productName) { },
+};
+
+// console.table(cart.getItems());
+
+cart.add({ name: '🍎', price: 50 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍋', price: 60 });
+cart.add({ name: '🍓', price: 110 });
+
+// console.table(cart.getItems());
+
+cart.remove('🍎');
+// console.table(cart.getItems());
+
+// cart.clear();
+// console.table(cart.getItems());
+
+// cart.increaseQuantity('🍎');
+// console.table(cart.getItems());
+
+// cart.decreaseQuantity('🍋');
+// cart.decreaseQuantity('🍋');
+// console.table(cart.getItems());
+
+// console.log('Total: ', cart.countTotalPrice());
 
 
 
