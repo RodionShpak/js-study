@@ -167,12 +167,12 @@
  * - Имя переменной отличное от имени свойства
  */
 
-const playlist = {
-    name: 'Мой супер плейлист',
-    rating: 5,
-    tracks: ['трек-1', 'трек-2', 'трек-3'],
-    trackCount: 3,
-};
+// const playlist = {
+//     name: 'Мой супер плейлист',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2', 'трек-3'],
+//     trackCount: 3,
+// };
 
 // const {
 //   rating,
@@ -214,20 +214,20 @@ const playlist = {
  * Деструктуризация массивов
  */
 
-const rgb = [255, 100, 80];
+// const rgb = [255, 100, 80];
 
-const [red, green, blue] = rgb;
+// const [red, green, blue] = rgb;
 
-// console.log(red, green, blue);
+// // console.log(red, green, blue);
 
-const authors = {
-    kiwi: 4,
-    poly: 7,
-    ajax: 9,
-    mango: 6,
-};
+// const authors = {
+//     kiwi: 4,
+//     poly: 7,
+//     ajax: 9,
+//     mango: 6,
+// };
 
-const entries = Object.entries(authors);
+// const entries = Object.entries(authors);
 
 // console.log(entries);
 
@@ -269,23 +269,26 @@ const entries = Object.entries(authors);
  * - rest при деструктуризации в подписи
  */
 
-const showProfileInfo = function (userProfile) {
-    const { name, tag, location, ...restProps } = userProfile;
+// const showProfileInfo = function (userProfile) {
+//     const { name, tag, location, ...restProps } = userProfile;
 
-    // console.log(name, tag, location, avatar, followers, views, likes);
-    console.log(restProps);
-};
+//     // console.log(name, tag, location, avatar, followers, views, likes);
+//     console.log(restProps);
+// };
 
-const profile = {
-    name: 'Jacques Gluke',
-    tag: 'jgluke',
-    location: 'Ocho Rios, Jamaica',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/r_oy/128.jpg',
-    stats: {
-        followers: 5603,
-        views: 4827,
-        likes: 1308,
-    },
-};
+// const profile = {
+//     name: 'Jacques Gluke',
+//     tag: 'jgluke',
+//     location: 'Ocho Rios, Jamaica',
+//     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/r_oy/128.jpg',
+//     stats: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
 
-showProfileInfo(profile);
+// showProfileInfo(profile);
+
+
+
